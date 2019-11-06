@@ -11,6 +11,7 @@ namespace Bytejam_Project
         public Dictionary<string, int> CardValues = new Dictionary<string, int>();
         public Dictionary<string, Image> CardImages = new Dictionary<string, Image>();
         public List<string> CardDeck;
+        public static string playName;
 
         public List<string> PlayerCards;
         public List<string> DealerCards;
@@ -138,6 +139,13 @@ namespace Bytejam_Project
             CardValues.Add( "KDiamond", 10 );
             CardValues.Add( "KHeart", 10 );
             CardValues.Add( "KSpade", 10 );
+
+            NameEntry form = new NameEntry();
+            form.Activated += delegate { this.Hide(); };
+            form.FormClosed += delegate { this.Show(); };
+            form.Show();
+
+            labelPlayerName.Text = playName + "'s Game! ";
 
             DealCards();
         }

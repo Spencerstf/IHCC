@@ -13,7 +13,7 @@ namespace Bytejam_Project
     public partial class MainMenu : Form
     {
         //dictionary thats a string int for name and score 
-        public Dictionary<string, int> sdfasdfsdafsd = new Dictionary<string, int>();
+        public static Dictionary<string, int> Players = new Dictionary<string, int>();
         
         public MainMenu()
         {
