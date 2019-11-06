@@ -14,6 +14,7 @@ namespace Bytejam_Project
     {
         //dictionary thats a string int for name and score 
         public static Dictionary<string, int> Players = new Dictionary<string, int>();
+        public static string ActivePlayer = "";
         
         public MainMenu()
         {
@@ -28,7 +29,9 @@ namespace Bytejam_Project
         private void btnBlackJack_Click( object sender, EventArgs e )
         {
             Blackjack form = new Blackjack();
-            form.Activated += delegate { this.Hide(); };
+            form.WindowState = FormWindowState.Minimized;
+            //form.Activated += delegate { this.Hide(); };
+            form.Load += delegate { this.Hide(); };
             form.FormClosed += delegate { this.Show(); };
             form.Show();
         }

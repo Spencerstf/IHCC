@@ -19,9 +19,14 @@ namespace Bytejam_Project
 
         private void btnSubmit_Click( object sender, EventArgs e )
         {
-            MainMenu.Players.Add(txtName.Text, 1000 );
-            Blackjack.playName = txtName.Text;
-            TexasHoldEm.playName = txtName.Text; 
+            if ( !MainMenu.Players.Keys.Contains( txtName.Text ) )
+            {
+                MainMenu.Players.Add( txtName.Text, 1000 );
+                MainMenu.ActivePlayer = txtName.Text;
+            }
+            else
+                MainMenu.ActivePlayer = txtName.Text;
+            Close();
         }
     }
 }
