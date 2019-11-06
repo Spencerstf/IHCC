@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{31829136-D1CA-48DA-AE6E-8109FF62BECE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Bytejam_Project</RootNamespace>
+    <AssemblyName>Bytejam Project</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Blackjack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Blackjack.Designer.cs">
+      <DependentUpon>Blackjack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NameEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NameEntry.Designer.cs">
+      <DependentUpon>NameEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TexasHoldEm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TexasHoldEm.Designer.cs">
+      <DependentUpon>TexasHoldEm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Blackjack.resx">
+      <DependentUpon>Blackjack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NameEntry.resx">
+      <DependentUpon>NameEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TexasHoldEm.resx">
+      <DependentUpon>TexasHoldEm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\0Club.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\0Diamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\0Heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\0Spade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\2Club.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\2Diamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\2Heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\2Spade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\3Club.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\3Diamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\3Heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\3Spade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\4Club.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\4Diamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\4Heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\4Spade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\5Club.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\5Diamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\5Heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\5Spade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\6Club.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\6Diamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\6Heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\6Spade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\7Club.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\7Diamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\7Heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\7Spade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\8Club.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\8Diamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\8Heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\8Spade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\9Club.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\9Diamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\9Heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\9Spade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\AClub.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\ADiamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\AHeart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\ASpade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\JClub.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\JDiamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\JHeart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\JSpade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\KClub.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\KDiamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\KHeart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\KSpade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\QClub.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\QDiamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\QHeart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\QSpade.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
