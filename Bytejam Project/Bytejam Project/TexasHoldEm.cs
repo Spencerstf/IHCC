@@ -46,9 +46,7 @@ namespace Bytejam_Project
         {
             //playerCard1.Image = CardImages["Back"];
             //playerCard2.Image = CardImages["Back"];
-            //playerCard3.Image = CardImages["Back"];
-            //playerCard4.Image = CardImages["Back"];
-            //playerCard5.Image = CardImages["Back"];
+            
             //
             //dealerCard1.Image = CardImages["Back"];
             //dealerCard2.Image = CardImages["Back"];
@@ -60,6 +58,26 @@ namespace Bytejam_Project
         private void btnExit_Click( object sender, EventArgs e )
         {
             Close();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
