@@ -31,6 +31,22 @@ namespace Bytejam_Project
 
         public void DealCards()
         {
+            // Reset scores using toString method because it is impossible to convert integers to strings.
+            playerScore.Text = 0.ToString();
+            dealerScore.Text = 0.ToString();
+
+            // Reset deck.
+            CardDeck = new List<string>();
+            foreach ( string key in CardValues.Keys )
+            {
+                CardDeck.Add( key );
+            }
+
+            // Reset cards.
+            PlayerCards = new List<string>();
+            DealerCards = new List<string>();
+
+            // Add card back images.
             playerCard1.Image = CardImages["Back"];
             playerCard1.Tag = "Back";
             playerCard2.Image = CardImages["Back"];
@@ -41,7 +57,6 @@ namespace Bytejam_Project
             playerCard4.Tag = "Back";
             playerCard5.Image = CardImages["Back"];
             playerCard5.Tag = "Back";
-
             dealerCard1.Image = CardImages["Back"];
             dealerCard1.Tag = "Back";
             dealerCard2.Image = CardImages["Back"];
@@ -52,29 +67,31 @@ namespace Bytejam_Project
             dealerCard4.Tag = "Back";
             dealerCard5.Image = CardImages["Back"];
             dealerCard5.Tag = "Back";
-
-            CardDeck = new List<string>();
-            foreach ( string key in CardValues.Keys )
-            {
-                CardDeck.Add( key );
-            }
-
-            PlayerCards = new List<string>();
-            DealerCards = new List<string>();
-
-            playerScore.Text = 0.ToString();
         }
 
         public void PlayerLose()
         {
+            MessageBox.Show( "You lose.", "Bye bye.", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+            DealCards();
+        }
 
+        public void DealerLose()
+        {
+            MessageBox.Show( "You win.", "Bye bye.", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+            DealCards();
+        }
+
+        public void EverybodyLose()
+        {
+            MessageBox.Show( "You both suck.", "Bye bye.", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+            DealCards();
         }
 
         private void Blackjack_Load( object sender, EventArgs e )
         {
             NameEntry form = new NameEntry();
             form.Shown += delegate { this.Hide(); };
-            form.FormClosed += delegate 
+            form.FormClosed += delegate
             {
                 this.Show();
                 this.WindowState = FormWindowState.Normal;
@@ -169,42 +186,101 @@ namespace Bytejam_Project
         private void btnHit_Click( object sender, EventArgs e )
         {
             Random random = new Random();
-            int nextCard = random.Next( 0, CardDeck.Count - 1 );
-            string card = CardDeck[nextCard];
-            PlayerCards.Add( card );
-            CardDeck.RemoveAt( nextCard );
-            Image cardImage = CardImages[card];
-            int nextScore = CardValues[card];
-            if ( nextScore == 0 )
-                nextScore = nextScore = AceValue( int.Parse( playerScore.Text ) );
-            if ( (string)playerCard1.Tag == "Back" )
+            int nextCard;
+            string card;
+            Image cardImage;
+            int nextScore;
+            if ( PlayerCards.Count < 5 )
             {
-                playerCard1.Image = cardImage;
-                playerCard1.Tag = card;
+                nextCard = random.Next( 0, CardDeck.Count - 1 );
+                card = CardDeck[nextCard];
+                PlayerCards.Add( card );
+                CardDeck.RemoveAt( nextCard );
+                cardImage = CardImages[card];
+                nextScore = CardValues[card];
+                if ( nextScore == 0 )
+                    nextScore = nextScore = AceValue( int.Parse( playerScore.Text ) );
+                if ( (string)playerCard1.Tag == "Back" )
+                {
+                    playerCard1.Image = cardImage;
+                    playerCard1.Tag = card;
+                }
+                else if ( (string)playerCard2.Tag == "Back" )
+                {
+                    playerCard2.Image = cardImage;
+                    playerCard2.Tag = card;
+                }
+                else if ( (string)playerCard3.Tag == "Back" )
+                {
+                    playerCard3.Image = cardImage;
+                    playerCard3.Tag = card;
+                }
+                else if ( (string)playerCard4.Tag == "Back" )
+                {
+                    playerCard4.Image = cardImage;
+                    playerCard4.Tag = card;
+                }
+                else if ( (string)playerCard5.Tag == "Back" )
+                {
+                    playerCard5.Image = cardImage;
+                    playerCard5.Tag = card;
+                }
+                playerScore.Text = (int.Parse( playerScore.Text ) + nextScore).ToString();
+                if ( int.Parse( playerScore.Text ) > 21 )
+                {
+                    PlayerLose();
+                    return;
+                }
             }
-            else if ( (string)playerCard2.Tag == "Back" )
+
+            if ( DealerCards.Count < 5 && int.Parse( dealerScore.Text ) <= int.Parse( playerScore.Text ) )
             {
-                playerCard2.Image = cardImage;
-                playerCard2.Tag = card;
+                nextCard = random.Next( 0, CardDeck.Count - 1 );
+                card = CardDeck[nextCard];
+                DealerCards.Add( card );
+                CardDeck.RemoveAt( nextCard );
+                cardImage = CardImages[card];
+                nextScore = CardValues[card];
+                if ( nextScore == 0 )
+                    nextScore = AceValue( int.Parse( dealerScore.Text ) );
+                if ( (string)dealerCard1.Tag == "Back" )
+                {
+                    dealerCard1.Image = cardImage;
+                    dealerCard1.Tag = card;
+                }
+                else if ( (string)dealerCard2.Tag == "Back" )
+                {
+                    dealerCard2.Image = cardImage;
+                    dealerCard2.Tag = card;
+                }
+                else if ( (string)dealerCard3.Tag == "Back" )
+                {
+                    dealerCard3.Image = cardImage;
+                    dealerCard3.Tag = card;
+                }
+                else if ( (string)dealerCard4.Tag == "Back" )
+                {
+                    dealerCard4.Image = cardImage;
+                    dealerCard4.Tag = card;
+                }
+                else if ( (string)dealerCard5.Tag == "Back" )
+                {
+                    dealerCard5.Image = cardImage;
+                    dealerCard5.Tag = card;
+                }
+                dealerScore.Text = (int.Parse( dealerScore.Text ) + nextScore).ToString();
+                if ( int.Parse( dealerScore.Text ) > 21 )
+                {
+                    DealerLose();
+                    return;
+                }
             }
-            else if ( (string)playerCard3.Tag == "Back" )
+
+            if ( PlayerCards.Count == 5 && DealerCards.Count == 5 )
             {
-                playerCard3.Image = cardImage;
-                playerCard3.Tag = card;
+                EverybodyLose();
+                return;
             }
-            else if ( (string)playerCard4.Tag == "Back" )
-            {
-                playerCard4.Image = cardImage;
-                playerCard4.Tag = card;
-            }
-            else if ( (string)playerCard5.Tag == "Back" )
-            {
-                playerCard5.Image = cardImage;
-                playerCard5.Tag = card;
-            }
-            playerScore.Text = (int.Parse( playerScore.Text ) + nextScore).ToString();
-            if ( int.Parse( playerScore.Text ) > 21 )
-                PlayerLose();
         }
     }
 }
