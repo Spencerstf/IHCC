@@ -141,11 +141,9 @@ namespace Bytejam_Project
             CardValues.Add( "KSpade", 10 );
 
             NameEntry form = new NameEntry();
-            form.Activated += delegate { this.Hide(); };
-            form.FormClosed += delegate { this.Show(); };
+            form.Load += delegate { this.Hide(); this.WindowState = FormWindowState.Minimized; form.Focus(); };
+            form.FormClosed += delegate { this.Show(); labelPlayerName.Text = playName + "'s Game! "; };
             form.Show();
-
-            labelPlayerName.Text = playName + "'s Game! ";
 
             DealCards();
         }

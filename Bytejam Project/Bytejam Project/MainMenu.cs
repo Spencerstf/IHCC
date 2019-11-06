@@ -22,7 +22,7 @@ namespace Bytejam_Project
 
         private void MainMenu_Load( object sender, EventArgs e )
         {
-
+            
         }
 
         private void btnBlackJack_Click( object sender, EventArgs e )

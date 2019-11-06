@@ -23,10 +23,5 @@ namespace Bytejam_Project
             Blackjack.playName = txtName.Text;
             TexasHoldEm.playName = txtName.Text; 
         }
-
-        private void NameEntry_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
