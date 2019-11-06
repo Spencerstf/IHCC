@@ -19,6 +19,13 @@ namespace Bytejam_Project
 
         private void btnSubmit_Click( object sender, EventArgs e )
         {
+            MainMenu.Players.Add(txtName.Text, 1000 );
+            Blackjack.playName = txtName.Text;
+            TexasHoldEm.playName = txtName.Text; 
+        }
+
+        private void NameEntry_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -15,6 +15,7 @@ namespace Bytejam_Project
     {
         public Dictionary<string, Image> CardImages = new Dictionary<string, Image>();
         public List<string> CardDeck;
+        public static string playName;
         public TexasHoldEm()
         {
             InitializeComponent();
@@ -29,8 +30,13 @@ namespace Bytejam_Project
                string actualName = splitDirectory[splitDirectory.Length - 1].Split('.')[0];
                CardImages.Add(actualName, Image.FromFile(imageFiles[x]));
            }
-           
-           DealCards();
+
+            NameEntry form = new NameEntry();
+            form.Activated += delegate { this.Hide(); };
+            form.FormClosed += delegate { this.Show(); };
+            form.Show();
+
+            DealCards();
 
 
 
