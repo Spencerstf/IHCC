@@ -10,15 +10,3 @@ C:\Users\fergu\source\repos\Bytejam Project\Bytejam Project\obj\Debug\Bytejam Pr
 C:\Users\fergu\source\repos\Bytejam Project\Bytejam Project\obj\Debug\Bytejam Project.exe
 C:\Users\fergu\source\repos\Bytejam Project\Bytejam Project\obj\Debug\Bytejam Project.pdb
 C:\Users\fergu\source\repos\Bytejam Project\Bytejam Project\obj\Debug\Bytejam_Project.NameEntry.resources
-C:\Users\fergu\Source\Repos\IHCC\Bytejam Project\Bytejam Project\bin\Debug\Bytejam Project.exe.config
-C:\Users\fergu\Source\Repos\IHCC\Bytejam Project\Bytejam Project\bin\Debug\Bytejam Project.exe
-C:\Users\fergu\Source\Repos\IHCC\Bytejam Project\Bytejam Project\bin\Debug\Bytejam Project.pdb
-C:\Users\fergu\Source\Repos\IHCC\Bytejam Project\Bytejam Project\obj\Debug\Bytejam Project.csprojAssemblyReference.cache
-C:\Users\fergu\Source\Repos\IHCC\Bytejam Project\Bytejam Project\obj\Debug\Bytejam_Project.Blackjack.resources
-C:\Users\fergu\Source\Repos\IHCC\Bytejam Project\Bytejam Project\obj\Debug\Bytejam_Project.MainMenu.resources
-C:\Users\fergu\Source\Repos\IHCC\Bytejam Project\Bytejam Project\obj\Debug\Bytejam_Project.NameEntry.resources
-C:\Users\fergu\Source\Repos\IHCC\Bytejam Project\Bytejam Project\obj\Debug\Bytejam_Project.Properties.Resources.resources
-C:\Users\fergu\Source\Repos\IHCC\Bytejam Project\Bytejam Project\obj\Debug\Bytejam_Project.TexasHoldEm.resources
-C:\Users\fergu\Source\Repos\IHCC\Bytejam Project\Bytejam Project\obj\Debug\Bytejam Project.csproj.GenerateResource.cache
-C:\Users\fergu\Source\Repos\IHCC\Bytejam Project\Bytejam Project\obj\Debug\Bytejam Project.exe
-C:\Users\fergu\Source\Repos\IHCC\Bytejam Project\Bytejam Project\obj\Debug\Bytejam Project.pdb
