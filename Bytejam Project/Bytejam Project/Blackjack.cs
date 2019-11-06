@@ -72,80 +72,88 @@ namespace Bytejam_Project
 
         private void Blackjack_Load( object sender, EventArgs e )
         {
-            string[] imageFiles = Directory.GetFiles( Directory.GetCurrentDirectory() + "/images/" );
-            for ( int x = 0; x < imageFiles.Length; x++ )
-            {
-                string[] splitDirectory = imageFiles[x].Split( '/' );
-                string actualName = splitDirectory[splitDirectory.Length - 1].Split( '.' )[0];
-                CardImages.Add( actualName, Image.FromFile( imageFiles[x] ) );
-            }
-
-            CardValues.Add( "0Club", 10 );
-            CardValues.Add( "0Diamond", 10 );
-            CardValues.Add( "0Heart", 10 );
-            CardValues.Add( "0Spade", 10 );
-
-            CardValues.Add( "2Club", 2 );
-            CardValues.Add( "2Diamond", 2 );
-            CardValues.Add( "2Heart", 2 );
-            CardValues.Add( "2Spade", 2 );
-
-            CardValues.Add( "3Club", 3 );
-            CardValues.Add( "3Diamond", 3 );
-            CardValues.Add( "3Heart", 3 );
-            CardValues.Add( "3Spade", 3 );
-
-            CardValues.Add( "4Club", 4 );
-            CardValues.Add( "4Diamond", 4 );
-            CardValues.Add( "4Heart", 4 );
-            CardValues.Add( "4Spade", 4 );
-
-            CardValues.Add( "5Club", 5 );
-            CardValues.Add( "5Diamond", 5 );
-            CardValues.Add( "5Heart", 5 );
-            CardValues.Add( "5Spade", 5 );
-
-            CardValues.Add( "6Club", 6 );
-            CardValues.Add( "6Diamond", 6 );
-            CardValues.Add( "6Heart", 6 );
-            CardValues.Add( "6Spade", 6 );
-
-            CardValues.Add( "7Club", 7 );
-            CardValues.Add( "7Diamond", 7 );
-            CardValues.Add( "7Heart", 7 );
-            CardValues.Add( "7Spade", 7 );
-
-            CardValues.Add( "8Club", 8 );
-            CardValues.Add( "8Diamond", 8 );
-            CardValues.Add( "8Heart", 8 );
-            CardValues.Add( "8Spade", 8 );
-
-            CardValues.Add( "9Club", 9 );
-            CardValues.Add( "9Diamond", 9 );
-            CardValues.Add( "9Heart", 9 );
-            CardValues.Add( "9Spade", 9 );
-
-            CardValues.Add( "JClub", 10 );
-            CardValues.Add( "JDiamond", 10 );
-            CardValues.Add( "JHeart", 10 );
-            CardValues.Add( "JSpade", 10 );
-
-            CardValues.Add( "QClub", 10 );
-            CardValues.Add( "QDiamond", 10 );
-            CardValues.Add( "QHeart", 10 );
-            CardValues.Add( "QSpade", 10 );
-
-            CardValues.Add( "KClub", 10 );
-            CardValues.Add( "KDiamond", 10 );
-            CardValues.Add( "KHeart", 10 );
-            CardValues.Add( "KSpade", 10 );
-
             NameEntry form = new NameEntry();
-            form.Load += delegate { this.Hide(); this.WindowState = FormWindowState.Minimized; form.Focus(); };
-            form.FormClosed += delegate { this.Show(); labelPlayerName.Text = playName + "'s Game! "; };
-            form.Show();
+            form.Shown += delegate { this.Hide(); };
+            form.FormClosed += delegate 
+            {
+                this.Show();
+                this.WindowState = FormWindowState.Normal;
 
-            DealCards();
+                string[] imageFiles = Directory.GetFiles( Directory.GetCurrentDirectory() + "/images/" );
+                for ( int x = 0; x < imageFiles.Length; x++ )
+                {
+                    string[] splitDirectory = imageFiles[x].Split( '/' );
+                    string actualName = splitDirectory[splitDirectory.Length - 1].Split( '.' )[0];
+                    CardImages.Add( actualName, Image.FromFile( imageFiles[x] ) );
+                }
+
+                CardValues.Add( "0Club", 10 );
+                CardValues.Add( "0Diamond", 10 );
+                CardValues.Add( "0Heart", 10 );
+                CardValues.Add( "0Spade", 10 );
+
+                CardValues.Add( "2Club", 2 );
+                CardValues.Add( "2Diamond", 2 );
+                CardValues.Add( "2Heart", 2 );
+                CardValues.Add( "2Spade", 2 );
+
+                CardValues.Add( "3Club", 3 );
+                CardValues.Add( "3Diamond", 3 );
+                CardValues.Add( "3Heart", 3 );
+                CardValues.Add( "3Spade", 3 );
+
+                CardValues.Add( "4Club", 4 );
+                CardValues.Add( "4Diamond", 4 );
+                CardValues.Add( "4Heart", 4 );
+                CardValues.Add( "4Spade", 4 );
+
+                CardValues.Add( "5Club", 5 );
+                CardValues.Add( "5Diamond", 5 );
+                CardValues.Add( "5Heart", 5 );
+                CardValues.Add( "5Spade", 5 );
+
+                CardValues.Add( "6Club", 6 );
+                CardValues.Add( "6Diamond", 6 );
+                CardValues.Add( "6Heart", 6 );
+                CardValues.Add( "6Spade", 6 );
+
+                CardValues.Add( "7Club", 7 );
+                CardValues.Add( "7Diamond", 7 );
+                CardValues.Add( "7Heart", 7 );
+                CardValues.Add( "7Spade", 7 );
+
+                CardValues.Add( "8Club", 8 );
+                CardValues.Add( "8Diamond", 8 );
+                CardValues.Add( "8Heart", 8 );
+                CardValues.Add( "8Spade", 8 );
+
+                CardValues.Add( "9Club", 9 );
+                CardValues.Add( "9Diamond", 9 );
+                CardValues.Add( "9Heart", 9 );
+                CardValues.Add( "9Spade", 9 );
+
+                CardValues.Add( "JClub", 10 );
+                CardValues.Add( "JDiamond", 10 );
+                CardValues.Add( "JHeart", 10 );
+                CardValues.Add( "JSpade", 10 );
+
+                CardValues.Add( "QClub", 10 );
+                CardValues.Add( "QDiamond", 10 );
+                CardValues.Add( "QHeart", 10 );
+                CardValues.Add( "QSpade", 10 );
+
+                CardValues.Add( "KClub", 10 );
+                CardValues.Add( "KDiamond", 10 );
+                CardValues.Add( "KHeart", 10 );
+                CardValues.Add( "KSpade", 10 );
+
+                DealCards();
+
+                Show();
+
+                labelPlayerName.Text = MainMenu.ActivePlayer + "'s Game!";
+            };
+            form.Show();
         }
 
         private void btnExit_Click( object sender, EventArgs e )
@@ -167,8 +175,8 @@ namespace Bytejam_Project
             CardDeck.RemoveAt( nextCard );
             Image cardImage = CardImages[card];
             int nextScore = CardValues[card];
-            if (nextScore == 0)
-                nextScore = nextScore = AceValue(int.Parse(playerScore.Text));
+            if ( nextScore == 0 )
+                nextScore = nextScore = AceValue( int.Parse( playerScore.Text ) );
             if ( (string)playerCard1.Tag == "Back" )
             {
                 playerCard1.Image = cardImage;
@@ -195,7 +203,7 @@ namespace Bytejam_Project
                 playerCard5.Tag = card;
             }
             playerScore.Text = (int.Parse( playerScore.Text ) + nextScore).ToString();
-            if (int.Parse(playerScore.Text) > 21)
+            if ( int.Parse( playerScore.Text ) > 21 )
                 PlayerLose();
         }
     }
