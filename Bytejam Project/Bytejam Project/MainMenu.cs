@@ -40,7 +40,6 @@ namespace Bytejam_Project
         {
             Blackjack form = new Blackjack();
             form.WindowState = FormWindowState.Minimized;
-            //form.Activated += delegate { this.Hide(); };
             form.Load += delegate { this.Hide(); };
             form.FormClosed += delegate { this.Show(); };
             form.Show();
@@ -49,7 +48,7 @@ namespace Bytejam_Project
         private void btnTexas_Click( object sender, EventArgs e )
         {
             TexasHoldEm form = new TexasHoldEm();
-            form.Activated += delegate { this.Hide(); };
+            form.Load += delegate { this.Hide(); };
             form.FormClosed += delegate { this.Show(); };
             form.Show();
         }
