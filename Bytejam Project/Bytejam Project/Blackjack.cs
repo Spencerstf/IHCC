@@ -275,7 +275,7 @@ namespace Bytejam_Project
 
                 Show();
 
-                lbllPlayerName.Text = MainMenu.ActivePlayer + "'s Game!";
+                labelPlayerName.Text = MainMenu.ActivePlayer + "'s Game!";
                 MainMenu.UpdateScore( lblPlayerScore );
             };
             form.Show();
