@@ -168,7 +168,7 @@ namespace Bytejam_Project
 
                 Show();
 
-                labelPlayerName.Text = MainMenu.ActivePlayer + "'s Game!";
+                lbllPlayerName.Text = MainMenu.ActivePlayer + "'s Game!";
             };
             form.Show();
         }

@@ -50,8 +50,8 @@ namespace Bytejam_Project
             this.playerScore = new System.Windows.Forms.Label();
             this.dealerScore = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.labelPlayerName = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbllPlayerName = new System.Windows.Forms.Label();
+            this.lblPlayerScore = new System.Windows.Forms.Label();
             this.btnPass = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,7 +71,7 @@ namespace Bytejam_Project
             this.btnHit.BackColor = System.Drawing.Color.Red;
             this.btnHit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHit.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnHit.Location = new System.Drawing.Point(492, 481);
+            this.btnHit.Location = new System.Drawing.Point(532, 481);
             this.btnHit.Name = "btnHit";
             this.btnHit.Size = new System.Drawing.Size(195, 79);
             this.btnHit.TabIndex = 3;
@@ -84,7 +84,7 @@ namespace Bytejam_Project
             this.btnExit.BackColor = System.Drawing.Color.Red;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnExit.Location = new System.Drawing.Point(5, 481);
+            this.btnExit.Location = new System.Drawing.Point(16, 481);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(189, 79);
             this.btnExit.TabIndex = 4;
@@ -97,7 +97,7 @@ namespace Bytejam_Project
             this.btnDeal.BackColor = System.Drawing.Color.Red;
             this.btnDeal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeal.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDeal.Location = new System.Drawing.Point(242, 481);
+            this.btnDeal.Location = new System.Drawing.Point(267, 481);
             this.btnDeal.Name = "btnDeal";
             this.btnDeal.Size = new System.Drawing.Size(203, 79);
             this.btnDeal.TabIndex = 5;
@@ -290,30 +290,31 @@ namespace Bytejam_Project
             this.label7.TabIndex = 22;
             this.label7.Text = "Dealer\'s card value=";
             // 
-            // labelPlayerName
+            // lbllPlayerName
             // 
-            this.labelPlayerName.AutoSize = true;
-            this.labelPlayerName.Location = new System.Drawing.Point(58, 37);
-            this.labelPlayerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelPlayerName.Name = "labelPlayerName";
-            this.labelPlayerName.Size = new System.Drawing.Size(0, 13);
-            this.labelPlayerName.TabIndex = 24;
+            this.lbllPlayerName.AutoSize = true;
+            this.lbllPlayerName.Location = new System.Drawing.Point(58, 37);
+            this.lbllPlayerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbllPlayerName.Name = "lbllPlayerName";
+            this.lbllPlayerName.Size = new System.Drawing.Size(94, 13);
+            this.lbllPlayerName.TabIndex = 24;
+            this.lbllPlayerName.Text = "Name Placeholder";
             // 
-            // label5
+            // lblPlayerScore
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "label5";
+            this.lblPlayerScore.AutoSize = true;
+            this.lblPlayerScore.Location = new System.Drawing.Point(13, 9);
+            this.lblPlayerScore.Name = "lblPlayerScore";
+            this.lblPlayerScore.Size = new System.Drawing.Size(94, 13);
+            this.lblPlayerScore.TabIndex = 25;
+            this.lblPlayerScore.Text = "Score Placeholder";
             // 
             // btnPass
             // 
             this.btnPass.BackColor = System.Drawing.Color.Red;
             this.btnPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPass.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnPass.Location = new System.Drawing.Point(701, 481);
+            this.btnPass.Location = new System.Drawing.Point(789, 481);
             this.btnPass.Name = "btnPass";
             this.btnPass.Size = new System.Drawing.Size(195, 79);
             this.btnPass.TabIndex = 26;
@@ -326,10 +327,10 @@ namespace Bytejam_Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(136)))), ((int)(((byte)(40)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(956, 587);
+            this.ClientSize = new System.Drawing.Size(997, 569);
             this.Controls.Add(this.btnPass);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.labelPlayerName);
+            this.Controls.Add(this.lblPlayerScore);
+            this.Controls.Add(this.lbllPlayerName);
             this.Controls.Add(this.dealerScore);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.playerScore);
@@ -392,8 +393,8 @@ namespace Bytejam_Project
         private System.Windows.Forms.Label playerScore;
         private System.Windows.Forms.Label dealerScore;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label labelPlayerName;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbllPlayerName;
+        private System.Windows.Forms.Label lblPlayerScore;
         private System.Windows.Forms.Button btnPass;
     }
 }
