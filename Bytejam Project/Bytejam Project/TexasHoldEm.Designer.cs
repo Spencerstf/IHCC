@@ -107,18 +107,19 @@
             this.btnDeal.Name = "btnDeal";
             this.btnDeal.Size = new System.Drawing.Size(203, 73);
             this.btnDeal.TabIndex = 2;
-            this.btnDeal.Text = "Deal";
+            this.btnDeal.Text = "Deal ($200)";
             this.btnDeal.UseVisualStyleBackColor = false;
+            this.btnDeal.Click += new System.EventHandler(this.BtnDeal_Click);
             // 
             // btnCall
             // 
             this.btnCall.BackColor = System.Drawing.Color.Red;
             this.btnCall.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCall.Location = new System.Drawing.Point(313, 599);
+            this.btnCall.Location = new System.Drawing.Point(446, 599);
             this.btnCall.Name = "btnCall";
             this.btnCall.Size = new System.Drawing.Size(203, 73);
             this.btnCall.TabIndex = 3;
-            this.btnCall.Text = "Call";
+            this.btnCall.Text = "Call ($100)";
             this.btnCall.UseVisualStyleBackColor = false;
             // 
             // btnFold
@@ -131,6 +132,7 @@
             this.btnFold.TabIndex = 5;
             this.btnFold.Text = "Fold";
             this.btnFold.UseVisualStyleBackColor = false;
+            this.btnFold.Click += new System.EventHandler(this.BtnFold_Click);
             // 
             // pictureBox2
             // 
@@ -225,9 +227,8 @@
             this.labelPlayerName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.labelPlayerName.Location = new System.Drawing.Point(48, 127);
             this.labelPlayerName.Name = "labelPlayerName";
-            this.labelPlayerName.Size = new System.Drawing.Size(51, 20);
+            this.labelPlayerName.Size = new System.Drawing.Size(0, 29);
             this.labelPlayerName.TabIndex = 16;
-            this.labelPlayerName.Text = "label3";
             // 
             // label3
             // 
@@ -236,10 +237,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(681, 257);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 20);
+            this.label3.Size = new System.Drawing.Size(191, 29);
             this.label3.TabIndex = 17;
             this.label3.Text = "Card\'s Value x10";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -290,7 +290,6 @@
             this.label8.Size = new System.Drawing.Size(49, 20);
             this.label8.TabIndex = 22;
             this.label8.Text = "$700 ";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -321,7 +320,6 @@
             this.label11.Size = new System.Drawing.Size(45, 20);
             this.label11.TabIndex = 25;
             this.label11.Text = "$900";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -335,7 +333,7 @@
             // 
             // TexasHoldEm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
