@@ -44,7 +44,7 @@
             this.playerCard1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.labelPlayerName = new System.Windows.Forms.Label();
+            this.lblPlayerName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,6 +55,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.lblPlayerScore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -90,7 +91,7 @@
             // 
             this.btnExit.BackColor = System.Drawing.Color.Red;
             this.btnExit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExit.Location = new System.Drawing.Point(602, 599);
+            this.btnExit.Location = new System.Drawing.Point(890, 599);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(203, 73);
             this.btnExit.TabIndex = 1;
@@ -102,7 +103,7 @@
             // 
             this.btnDeal.BackColor = System.Drawing.Color.Red;
             this.btnDeal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDeal.Location = new System.Drawing.Point(38, 578);
+            this.btnDeal.Location = new System.Drawing.Point(37, 599);
             this.btnDeal.Name = "btnDeal";
             this.btnDeal.Size = new System.Drawing.Size(203, 73);
             this.btnDeal.TabIndex = 2;
@@ -114,18 +115,19 @@
             // 
             this.btnCall.BackColor = System.Drawing.Color.Red;
             this.btnCall.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCall.Location = new System.Drawing.Point(299, 599);
+            this.btnCall.Location = new System.Drawing.Point(320, 599);
             this.btnCall.Name = "btnCall";
             this.btnCall.Size = new System.Drawing.Size(203, 73);
             this.btnCall.TabIndex = 3;
             this.btnCall.Text = "Call ($100)";
             this.btnCall.UseVisualStyleBackColor = false;
+            this.btnCall.Click += new System.EventHandler(this.BtnCall_Click);
             // 
             // btnFold
             // 
             this.btnFold.BackColor = System.Drawing.Color.Red;
             this.btnFold.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnFold.Location = new System.Drawing.Point(878, 599);
+            this.btnFold.Location = new System.Drawing.Point(606, 599);
             this.btnFold.Name = "btnFold";
             this.btnFold.Size = new System.Drawing.Size(203, 73);
             this.btnFold.TabIndex = 5;
@@ -135,6 +137,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(807, 2);
             this.pictureBox2.Name = "pictureBox2";
@@ -219,22 +222,23 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "Player\'s Hand";
             // 
-            // labelPlayerName
+            // lblPlayerName
             // 
-            this.labelPlayerName.AutoSize = true;
-            this.labelPlayerName.BackColor = System.Drawing.Color.Transparent;
-            this.labelPlayerName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelPlayerName.Location = new System.Drawing.Point(48, 127);
-            this.labelPlayerName.Name = "labelPlayerName";
-            this.labelPlayerName.Size = new System.Drawing.Size(0, 20);
-            this.labelPlayerName.TabIndex = 16;
+            this.lblPlayerName.AutoSize = true;
+            this.lblPlayerName.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblPlayerName.Location = new System.Drawing.Point(43, 22);
+            this.lblPlayerName.Name = "lblPlayerName";
+            this.lblPlayerName.Size = new System.Drawing.Size(138, 20);
+            this.lblPlayerName.TabIndex = 16;
+            this.lblPlayerName.Text = "Name Placeholder";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(681, 257);
+            this.label3.Location = new System.Drawing.Point(677, 256);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 20);
             this.label3.TabIndex = 17;
@@ -242,79 +246,87 @@
             // 
             // label4
             // 
+            this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(764, 227);
+            this.label4.Location = new System.Drawing.Point(760, 230);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 20);
             this.label4.TabIndex = 18;
-            this.label4.Text = "$200 ";
+            this.label4.Text = "$200";
             // 
             // label5
             // 
+            this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(760, 177);
+            this.label5.Location = new System.Drawing.Point(760, 178);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
+            this.label5.Size = new System.Drawing.Size(45, 20);
             this.label5.TabIndex = 19;
             this.label5.Text = "$400";
             // 
             // label6
             // 
+            this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(760, 207);
+            this.label6.Location = new System.Drawing.Point(760, 204);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 20);
+            this.label6.Size = new System.Drawing.Size(45, 20);
             this.label6.TabIndex = 20;
             this.label6.Text = "$300";
             // 
             // label7
             // 
+            this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(760, 157);
+            this.label7.Location = new System.Drawing.Point(760, 152);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 20);
+            this.label7.Size = new System.Drawing.Size(45, 20);
             this.label7.TabIndex = 21;
-            this.label7.Text = "$500 ";
+            this.label7.Text = "$500";
             // 
             // label8
             // 
+            this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(760, 107);
+            this.label8.Location = new System.Drawing.Point(760, 100);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 20);
+            this.label8.Size = new System.Drawing.Size(45, 20);
             this.label8.TabIndex = 22;
-            this.label8.Text = "$700 ";
+            this.label8.Text = "$700";
             // 
             // label9
             // 
+            this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(756, 127);
+            this.label9.Location = new System.Drawing.Point(760, 126);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 20);
+            this.label9.Size = new System.Drawing.Size(45, 20);
             this.label9.TabIndex = 23;
             this.label9.Text = "$600";
             // 
             // label10
             // 
+            this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label10.Location = new System.Drawing.Point(753, 22);
+            this.label10.Location = new System.Drawing.Point(751, 22);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 20);
+            this.label10.Size = new System.Drawing.Size(54, 20);
             this.label10.TabIndex = 24;
             this.label10.Text = "$1000";
             // 
             // label11
             // 
+            this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label11.Location = new System.Drawing.Point(764, 55);
+            this.label11.Location = new System.Drawing.Point(760, 48);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 20);
             this.label11.TabIndex = 25;
@@ -322,13 +334,25 @@
             // 
             // label12
             // 
+            this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label12.Location = new System.Drawing.Point(764, 75);
+            this.label12.Location = new System.Drawing.Point(760, 74);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(45, 20);
             this.label12.TabIndex = 26;
             this.label12.Text = "$800";
+            // 
+            // lblPlayerScore
+            // 
+            this.lblPlayerScore.AutoSize = true;
+            this.lblPlayerScore.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerScore.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblPlayerScore.Location = new System.Drawing.Point(43, 74);
+            this.lblPlayerScore.Name = "lblPlayerScore";
+            this.lblPlayerScore.Size = new System.Drawing.Size(138, 20);
+            this.lblPlayerScore.TabIndex = 16;
+            this.lblPlayerScore.Text = "Score Placeholder";
             // 
             // TexasHoldEm
             // 
@@ -347,7 +371,8 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.labelPlayerName);
+            this.Controls.Add(this.lblPlayerScore);
+            this.Controls.Add(this.lblPlayerName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.playerCard1);
@@ -398,7 +423,7 @@
         private System.Windows.Forms.PictureBox playerCard1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelPlayerName;
+        private System.Windows.Forms.Label lblPlayerName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -410,5 +435,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox playerCard2;
+        private System.Windows.Forms.Label lblPlayerScore;
     }
 }

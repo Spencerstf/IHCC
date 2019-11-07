@@ -14,6 +14,8 @@ namespace Bytejam_Project
         [STAThread]
         static void Main()
         {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer( "songs/main.wav" );
+            player.PlayLooping();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault( false );
             Application.Run( new MainMenu() );
