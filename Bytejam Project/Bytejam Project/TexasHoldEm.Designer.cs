@@ -74,7 +74,6 @@
             this.playerCard2.Size = new System.Drawing.Size(74, 99);
             this.playerCard2.TabIndex = 12;
             this.playerCard2.TabStop = false;
-            this.playerCard2.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // pictureBox1
             // 
@@ -115,7 +114,7 @@
             // 
             this.btnCall.BackColor = System.Drawing.Color.Red;
             this.btnCall.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCall.Location = new System.Drawing.Point(446, 599);
+            this.btnCall.Location = new System.Drawing.Point(299, 599);
             this.btnCall.Name = "btnCall";
             this.btnCall.Size = new System.Drawing.Size(203, 73);
             this.btnCall.TabIndex = 3;
@@ -227,7 +226,7 @@
             this.labelPlayerName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.labelPlayerName.Location = new System.Drawing.Point(48, 127);
             this.labelPlayerName.Name = "labelPlayerName";
-            this.labelPlayerName.Size = new System.Drawing.Size(0, 29);
+            this.labelPlayerName.Size = new System.Drawing.Size(0, 20);
             this.labelPlayerName.TabIndex = 16;
             // 
             // label3
@@ -237,7 +236,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(681, 257);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(191, 29);
+            this.label3.Size = new System.Drawing.Size(128, 20);
             this.label3.TabIndex = 17;
             this.label3.Text = "Card\'s Value x10";
             // 
@@ -333,7 +332,7 @@
             // 
             // TexasHoldEm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
