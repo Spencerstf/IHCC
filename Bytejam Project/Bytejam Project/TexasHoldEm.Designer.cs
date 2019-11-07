@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TexasHoldEm));
-            System.Windows.Forms.PictureBox playerCard2;
+            this.playerCard2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnDeal = new System.Windows.Forms.Button();
             this.btnCall = new System.Windows.Forms.Button();
-            this.btnPass = new System.Windows.Forms.Button();
             this.btnFold = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dealerCard1 = new System.Windows.Forms.PictureBox();
@@ -56,7 +55,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            playerCard2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard1)).BeginInit();
@@ -64,9 +63,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(playerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // playerCard2
+            // 
+            this.playerCard2.Image = global::Bytejam_Project.Properties.Resources.Back;
+            this.playerCard2.Location = new System.Drawing.Point(807, 311);
+            this.playerCard2.Name = "playerCard2";
+            this.playerCard2.Size = new System.Drawing.Size(74, 99);
+            this.playerCard2.TabIndex = 12;
+            this.playerCard2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -99,30 +106,21 @@
             this.btnDeal.Name = "btnDeal";
             this.btnDeal.Size = new System.Drawing.Size(203, 73);
             this.btnDeal.TabIndex = 2;
-            this.btnDeal.Text = "Deal";
+            this.btnDeal.Text = "Deal ($200)";
             this.btnDeal.UseVisualStyleBackColor = false;
+            this.btnDeal.Click += new System.EventHandler(this.BtnDeal_Click);
             // 
             // btnCall
             // 
             this.btnCall.BackColor = System.Drawing.Color.Red;
             this.btnCall.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCall.Location = new System.Drawing.Point(313, 599);
+            this.btnCall.Location = new System.Drawing.Point(446, 599);
             this.btnCall.Name = "btnCall";
             this.btnCall.Size = new System.Drawing.Size(203, 73);
             this.btnCall.TabIndex = 3;
-            this.btnCall.Text = "Call";
+            this.btnCall.Text = "Call ($100)";
             this.btnCall.UseVisualStyleBackColor = false;
-            // 
-            // btnPass
-            // 
-            this.btnPass.BackColor = System.Drawing.Color.Red;
-            this.btnPass.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnPass.Location = new System.Drawing.Point(604, 599);
-            this.btnPass.Name = "btnPass";
-            this.btnPass.Size = new System.Drawing.Size(203, 73);
-            this.btnPass.TabIndex = 4;
-            this.btnPass.Text = "Pass";
-            this.btnPass.UseVisualStyleBackColor = false;
+            this.btnCall.Click += new System.EventHandler(this.BtnCall_Click);
             // 
             // btnFold
             // 
@@ -134,6 +132,7 @@
             this.btnFold.TabIndex = 5;
             this.btnFold.Text = "Fold";
             this.btnFold.UseVisualStyleBackColor = false;
+            this.btnFold.Click += new System.EventHandler(this.BtnFold_Click);
             // 
             // pictureBox2
             // 
@@ -190,16 +189,6 @@
             this.dealerCard5.TabIndex = 11;
             this.dealerCard5.TabStop = false;
             // 
-            // playerCard2
-            // 
-            playerCard2.Image = global::Bytejam_Project.Properties.Resources.Back;
-            playerCard2.Location = new System.Drawing.Point(807, 311);
-            playerCard2.Name = "playerCard2";
-            playerCard2.Size = new System.Drawing.Size(74, 99);
-            playerCard2.TabIndex = 12;
-            playerCard2.TabStop = false;
-            playerCard2.Click += new System.EventHandler(this.pictureBox8_Click);
-            // 
             // playerCard1
             // 
             this.playerCard1.Image = global::Bytejam_Project.Properties.Resources.Back;
@@ -238,9 +227,8 @@
             this.labelPlayerName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.labelPlayerName.Location = new System.Drawing.Point(48, 127);
             this.labelPlayerName.Name = "labelPlayerName";
-            this.labelPlayerName.Size = new System.Drawing.Size(51, 20);
+            this.labelPlayerName.Size = new System.Drawing.Size(0, 29);
             this.labelPlayerName.TabIndex = 16;
-            this.labelPlayerName.Text = "label3";
             // 
             // label3
             // 
@@ -249,10 +237,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(681, 257);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 20);
+            this.label3.Size = new System.Drawing.Size(191, 29);
             this.label3.TabIndex = 17;
             this.label3.Text = "Card\'s Value x10";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -303,7 +290,6 @@
             this.label8.Size = new System.Drawing.Size(49, 20);
             this.label8.TabIndex = 22;
             this.label8.Text = "$700 ";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -334,7 +320,6 @@
             this.label11.Size = new System.Drawing.Size(45, 20);
             this.label11.TabIndex = 25;
             this.label11.Text = "$900";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -348,11 +333,11 @@
             // 
             // TexasHoldEm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1114, 503);
+            this.ClientSize = new System.Drawing.Size(1114, 683);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -367,7 +352,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.playerCard1);
-            this.Controls.Add(playerCard2);
+            this.Controls.Add(this.playerCard2);
             this.Controls.Add(this.dealerCard5);
             this.Controls.Add(this.dealerCard2);
             this.Controls.Add(this.dealerCard3);
@@ -375,7 +360,6 @@
             this.Controls.Add(this.dealerCard1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnFold);
-            this.Controls.Add(this.btnPass);
             this.Controls.Add(this.btnCall);
             this.Controls.Add(this.btnDeal);
             this.Controls.Add(this.btnExit);
@@ -385,6 +369,7 @@
             this.Name = "TexasHoldEm";
             this.Text = "TexasHoldEm";
             this.Load += new System.EventHandler(this.TexasHoldEm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.playerCard2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard1)).EndInit();
@@ -392,7 +377,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(playerCard2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -405,7 +389,6 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnDeal;
         private System.Windows.Forms.Button btnCall;
-        private System.Windows.Forms.Button btnPass;
         private System.Windows.Forms.Button btnFold;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox dealerCard1;
@@ -427,5 +410,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox playerCard2;
     }
 }
