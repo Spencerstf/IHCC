@@ -102,7 +102,7 @@
             // 
             this.btnDeal.BackColor = System.Drawing.Color.Red;
             this.btnDeal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDeal.Location = new System.Drawing.Point(12, 599);
+            this.btnDeal.Location = new System.Drawing.Point(21, 585);
             this.btnDeal.Name = "btnDeal";
             this.btnDeal.Size = new System.Drawing.Size(203, 73);
             this.btnDeal.TabIndex = 2;
