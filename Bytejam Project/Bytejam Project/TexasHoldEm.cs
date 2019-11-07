@@ -19,7 +19,7 @@ namespace Bytejam_Project
             InitializeComponent();
         }
 
-        private void TexasHoldEm_Load( object sender, EventArgs e )
+        private void TexasHoldEm_Load(object sender, EventArgs e)
         {
             NameEntry form = new NameEntry();
             form.Shown += delegate { this.Hide(); };
@@ -44,12 +44,12 @@ namespace Bytejam_Project
 
             };
             form.Show();
-            
+
         }
 
         public void DealCards()
         {
-            
+
 
             //Reset cards 
             PlayerCards = new List<string>();
@@ -57,9 +57,9 @@ namespace Bytejam_Project
 
             //Add card back images
             playerCard1.Image = CardImages["Back"];
-            playerCard1.Tag = "Back"; 
+            playerCard1.Tag = "Back";
             playerCard2.Image = CardImages["Back"];
-            playerCard2.Tag = "Back";            
+            playerCard2.Tag = "Back";
             dealerCard1.Image = CardImages["Back"];
             dealerCard1.Tag = "Back";
             dealerCard2.Image = CardImages["Back"];
@@ -78,7 +78,7 @@ namespace Bytejam_Project
 
         }
 
-        private void btnExit_Click( object sender, EventArgs e )
+        private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -124,7 +124,7 @@ namespace Bytejam_Project
             //    playerCard2.Tag = card;
             //}
 
-            
+
             //200 to deal in and 100 to call 
             //get next dealer card 
         }
@@ -136,5 +136,7 @@ namespace Bytejam_Project
             DealCards();
         }
 
+
     }
+
 }

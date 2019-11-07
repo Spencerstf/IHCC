@@ -44,7 +44,6 @@
             this.playerCard1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.labelPlayerName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,6 +54,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.labelPlayerName = new System.Windows.Forms.Label();
+            this.lblPlayerScore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -64,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // playerCard2
@@ -90,7 +93,7 @@
             // 
             this.btnExit.BackColor = System.Drawing.Color.Red;
             this.btnExit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExit.Location = new System.Drawing.Point(602, 599);
+            this.btnExit.Location = new System.Drawing.Point(872, 599);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(203, 73);
             this.btnExit.TabIndex = 1;
@@ -114,7 +117,7 @@
             // 
             this.btnCall.BackColor = System.Drawing.Color.Red;
             this.btnCall.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCall.Location = new System.Drawing.Point(299, 599);
+            this.btnCall.Location = new System.Drawing.Point(290, 600);
             this.btnCall.Name = "btnCall";
             this.btnCall.Size = new System.Drawing.Size(203, 73);
             this.btnCall.TabIndex = 3;
@@ -125,7 +128,7 @@
             // 
             this.btnFold.BackColor = System.Drawing.Color.Red;
             this.btnFold.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnFold.Location = new System.Drawing.Point(878, 599);
+            this.btnFold.Location = new System.Drawing.Point(588, 599);
             this.btnFold.Name = "btnFold";
             this.btnFold.Size = new System.Drawing.Size(203, 73);
             this.btnFold.TabIndex = 5;
@@ -218,16 +221,6 @@
             this.label2.Size = new System.Drawing.Size(164, 32);
             this.label2.TabIndex = 15;
             this.label2.Text = "Player\'s Hand";
-            // 
-            // labelPlayerName
-            // 
-            this.labelPlayerName.AutoSize = true;
-            this.labelPlayerName.BackColor = System.Drawing.Color.Transparent;
-            this.labelPlayerName.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelPlayerName.Location = new System.Drawing.Point(48, 127);
-            this.labelPlayerName.Name = "labelPlayerName";
-            this.labelPlayerName.Size = new System.Drawing.Size(0, 20);
-            this.labelPlayerName.TabIndex = 16;
             // 
             // label3
             // 
@@ -330,6 +323,41 @@
             this.label12.TabIndex = 26;
             this.label12.Text = "$800";
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(10, 2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(294, 192);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 27;
+            this.pictureBox3.TabStop = false;
+            // 
+            // labelPlayerName
+            // 
+            this.labelPlayerName.AutoSize = true;
+            this.labelPlayerName.BackColor = System.Drawing.Color.Transparent;
+            this.labelPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPlayerName.Image = ((System.Drawing.Image)(resources.GetObject("labelPlayerName.Image")));
+            this.labelPlayerName.Location = new System.Drawing.Point(63, 75);
+            this.labelPlayerName.Name = "labelPlayerName";
+            this.labelPlayerName.Size = new System.Drawing.Size(265, 32);
+            this.labelPlayerName.TabIndex = 28;
+            this.labelPlayerName.Text = "Name Placeholder";
+            // 
+            // lblPlayerScore
+            // 
+            this.lblPlayerScore.AutoSize = true;
+            this.lblPlayerScore.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerScore.Image = ((System.Drawing.Image)(resources.GetObject("lblPlayerScore.Image")));
+            this.lblPlayerScore.Location = new System.Drawing.Point(79, 115);
+            this.lblPlayerScore.Name = "lblPlayerScore";
+            this.lblPlayerScore.Size = new System.Drawing.Size(265, 32);
+            this.lblPlayerScore.TabIndex = 32;
+            this.lblPlayerScore.Text = "Score Placeholder";
+            // 
             // TexasHoldEm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -337,6 +365,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1114, 685);
+            this.Controls.Add(this.lblPlayerScore);
+            this.Controls.Add(this.labelPlayerName);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -347,7 +378,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.labelPlayerName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.playerCard1);
@@ -377,6 +407,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dealerCard5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,7 +429,6 @@
         private System.Windows.Forms.PictureBox playerCard1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelPlayerName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -410,5 +440,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox playerCard2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label labelPlayerName;
+        private System.Windows.Forms.Label lblPlayerScore;
     }
 }

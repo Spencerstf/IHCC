@@ -44,7 +44,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(61, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 20);
+            this.label1.Size = new System.Drawing.Size(296, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Please enter your name:";
             // 
@@ -52,17 +52,18 @@
             // 
             this.txtName.Location = new System.Drawing.Point(277, 38);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 26);
+            this.txtName.Size = new System.Drawing.Size(100, 35);
             this.txtName.TabIndex = 1;
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(189, 162);
+            this.btnSubmit.Location = new System.Drawing.Point(179, 131);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 40);
             this.btnSubmit.TabIndex = 3;
@@ -72,11 +73,11 @@
             // 
             // NameEntry
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(648, 408);
+            this.ClientSize = new System.Drawing.Size(462, 257);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
