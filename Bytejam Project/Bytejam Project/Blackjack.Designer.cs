@@ -101,13 +101,13 @@ namespace Bytejam_Project
             this.btnDeal.Name = "btnDeal";
             this.btnDeal.Size = new System.Drawing.Size(203, 79);
             this.btnDeal.TabIndex = 5;
-            this.btnDeal.Text = "Deal";
+            this.btnDeal.Text = "Deal ($100)";
             this.btnDeal.UseVisualStyleBackColor = false;
             this.btnDeal.Click += new System.EventHandler(this.btnDeal_Click);
             // 
             // playerCard1
             // 
-            this.playerCard1.Image = global::Bytejam_Project.Properties.Resources.AClub;
+            this.playerCard1.Image = ((System.Drawing.Image)(resources.GetObject("playerCard1.Image")));
             this.playerCard1.Location = new System.Drawing.Point(601, 305);
             this.playerCard1.Name = "playerCard1";
             this.playerCard1.Size = new System.Drawing.Size(73, 98);
@@ -128,7 +128,7 @@ namespace Bytejam_Project
             // 
             // playerCard2
             // 
-            this.playerCard2.Image = global::Bytejam_Project.Properties.Resources.AClub;
+            this.playerCard2.Image = ((System.Drawing.Image)(resources.GetObject("playerCard2.Image")));
             this.playerCard2.Location = new System.Drawing.Point(680, 305);
             this.playerCard2.Name = "playerCard2";
             this.playerCard2.Size = new System.Drawing.Size(73, 98);
@@ -138,7 +138,7 @@ namespace Bytejam_Project
             // 
             // playerCard3
             // 
-            this.playerCard3.Image = global::Bytejam_Project.Properties.Resources.AClub;
+            this.playerCard3.Image = ((System.Drawing.Image)(resources.GetObject("playerCard3.Image")));
             this.playerCard3.Location = new System.Drawing.Point(759, 305);
             this.playerCard3.Name = "playerCard3";
             this.playerCard3.Size = new System.Drawing.Size(73, 98);
@@ -149,7 +149,7 @@ namespace Bytejam_Project
             // playerCard4
             // 
             this.playerCard4.BackColor = System.Drawing.Color.Firebrick;
-            this.playerCard4.Image = global::Bytejam_Project.Properties.Resources.AClub;
+            this.playerCard4.Image = ((System.Drawing.Image)(resources.GetObject("playerCard4.Image")));
             this.playerCard4.Location = new System.Drawing.Point(838, 305);
             this.playerCard4.Name = "playerCard4";
             this.playerCard4.Size = new System.Drawing.Size(73, 98);
@@ -159,7 +159,7 @@ namespace Bytejam_Project
             // 
             // playerCard5
             // 
-            this.playerCard5.Image = global::Bytejam_Project.Properties.Resources.AClub;
+            this.playerCard5.Image = global::Bytejam_Project.Properties.Resources.Back;
             this.playerCard5.Location = new System.Drawing.Point(917, 305);
             this.playerCard5.Name = "playerCard5";
             this.playerCard5.Size = new System.Drawing.Size(73, 98);
@@ -193,7 +193,7 @@ namespace Bytejam_Project
             // 
             // dealerCard5
             // 
-            this.dealerCard5.Image = global::Bytejam_Project.Properties.Resources.AClub;
+            this.dealerCard5.Image = ((System.Drawing.Image)(resources.GetObject("dealerCard5.Image")));
             this.dealerCard5.Location = new System.Drawing.Point(332, 305);
             this.dealerCard5.Name = "dealerCard5";
             this.dealerCard5.Size = new System.Drawing.Size(73, 98);
@@ -204,7 +204,7 @@ namespace Bytejam_Project
             // dealerCard4
             // 
             this.dealerCard4.BackColor = System.Drawing.Color.Firebrick;
-            this.dealerCard4.Image = global::Bytejam_Project.Properties.Resources.AClub;
+            this.dealerCard4.Image = ((System.Drawing.Image)(resources.GetObject("dealerCard4.Image")));
             this.dealerCard4.Location = new System.Drawing.Point(253, 305);
             this.dealerCard4.Name = "dealerCard4";
             this.dealerCard4.Size = new System.Drawing.Size(73, 98);
@@ -214,7 +214,7 @@ namespace Bytejam_Project
             // 
             // dealerCard3
             // 
-            this.dealerCard3.Image = global::Bytejam_Project.Properties.Resources.AClub;
+            this.dealerCard3.Image = ((System.Drawing.Image)(resources.GetObject("dealerCard3.Image")));
             this.dealerCard3.Location = new System.Drawing.Point(174, 305);
             this.dealerCard3.Name = "dealerCard3";
             this.dealerCard3.Size = new System.Drawing.Size(73, 98);
@@ -224,7 +224,7 @@ namespace Bytejam_Project
             // 
             // dealerCard2
             // 
-            this.dealerCard2.Image = global::Bytejam_Project.Properties.Resources.AClub;
+            this.dealerCard2.Image = ((System.Drawing.Image)(resources.GetObject("dealerCard2.Image")));
             this.dealerCard2.Location = new System.Drawing.Point(95, 305);
             this.dealerCard2.Name = "dealerCard2";
             this.dealerCard2.Size = new System.Drawing.Size(73, 98);
@@ -234,7 +234,7 @@ namespace Bytejam_Project
             // 
             // dealerCard1
             // 
-            this.dealerCard1.Image = global::Bytejam_Project.Properties.Resources.AClub;
+            this.dealerCard1.Image = ((System.Drawing.Image)(resources.GetObject("dealerCard1.Image")));
             this.dealerCard1.Location = new System.Drawing.Point(16, 305);
             this.dealerCard1.Name = "dealerCard1";
             this.dealerCard1.Size = new System.Drawing.Size(73, 98);
@@ -293,7 +293,7 @@ namespace Bytejam_Project
             // lbllPlayerName
             // 
             this.lbllPlayerName.AutoSize = true;
-            this.lbllPlayerName.Location = new System.Drawing.Point(58, 37);
+            this.lbllPlayerName.Location = new System.Drawing.Point(11, 9);
             this.lbllPlayerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbllPlayerName.Name = "lbllPlayerName";
             this.lbllPlayerName.Size = new System.Drawing.Size(94, 13);
@@ -303,7 +303,7 @@ namespace Bytejam_Project
             // lblPlayerScore
             // 
             this.lblPlayerScore.AutoSize = true;
-            this.lblPlayerScore.Location = new System.Drawing.Point(13, 9);
+            this.lblPlayerScore.Location = new System.Drawing.Point(11, 37);
             this.lblPlayerScore.Name = "lblPlayerScore";
             this.lblPlayerScore.Size = new System.Drawing.Size(94, 13);
             this.lblPlayerScore.TabIndex = 25;
@@ -320,6 +320,7 @@ namespace Bytejam_Project
             this.btnPass.TabIndex = 26;
             this.btnPass.Text = "Pass";
             this.btnPass.UseVisualStyleBackColor = false;
+            this.btnPass.Click += new System.EventHandler(this.btnPass_Click);
             // 
             // Blackjack
             // 

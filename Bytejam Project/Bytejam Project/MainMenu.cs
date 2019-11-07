@@ -15,7 +15,19 @@ namespace Bytejam_Project
         //dictionary thats a string int for name and score 
         public static Dictionary<string, int> Players = new Dictionary<string, int>();
         public static string ActivePlayer = "";
-        
+
+        public static void UpdateScore( Label scoreDisplay, int change )
+        {
+            MainMenu.Players[MainMenu.ActivePlayer] += change;
+            UpdateScore( scoreDisplay );
+        }
+
+        public static void UpdateScore(Label scoreDisplay)
+        {
+            scoreDisplay.Text = string.Format( "{0:C}",
+                MainMenu.Players[MainMenu.ActivePlayer] );
+        }
+
         public MainMenu()
         {
             InitializeComponent();
