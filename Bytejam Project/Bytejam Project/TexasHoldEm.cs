@@ -25,6 +25,9 @@ namespace Bytejam_Project
 
         private void TexasHoldEm_Load(object sender, EventArgs e)
         {
+            //check to see if players $$ is negative 
+            NegativeCheck(); 
+
             NameEntry form = new NameEntry();
             form.Shown += delegate { this.Hide(); };
             form.FormClosed += delegate
