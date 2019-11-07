@@ -4753,7 +4753,7 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="labelPlayerName.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="lblPlayerName.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAc4AAAEYCAYAAADVgRaCAAABgmlDQ1BJQ0MgcHJvZmlsZQAAKM+VkTlI
         A0EYhT+jEvFA0BQiFluolYKoiKVEUQQFSSLEo3B3Yw7IbsJuxMZSsBUsPBqvwsZaWwtbQRA8QGxsrRRt
