@@ -17,6 +17,7 @@ namespace Bytejam_Project
         public List<string> DealerCards;
 
         private bool running = false;
+        private Random random = new Random();
 
         public Blackjack()
         {
@@ -111,7 +112,6 @@ namespace Bytejam_Project
 
         public void PlayerDraw()
         {
-            Random random = new Random();
             int nextCard;
             string card;
             Image cardImage;
@@ -154,7 +154,6 @@ namespace Bytejam_Project
 
         public void DealerDraw()
         {
-            Random random = new Random();
             int nextCard;
             string card;
             Image cardImage;

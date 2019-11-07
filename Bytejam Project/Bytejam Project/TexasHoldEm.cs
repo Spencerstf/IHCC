@@ -17,13 +17,14 @@ namespace Bytejam_Project
         public List<string> DealerCards;
 
         private bool running = false;
+        private Random random = new Random();
 
         public TexasHoldEm()
         {
             InitializeComponent();
         }
 
-        private void TexasHoldEm_Load(object sender, EventArgs e)
+        private void TexasHoldEm_Load( object sender, EventArgs e )
         {
             NameEntry form = new NameEntry();
             form.Shown += delegate { this.Hide(); };
@@ -83,7 +84,7 @@ namespace Bytejam_Project
             if ( !running )
                 return;
 
-            CheckHand();
+            Lose();
         }
 
         private void DealCards()
@@ -113,7 +114,6 @@ namespace Bytejam_Project
 
         public void PlayerDraw()
         {
-            Random random = new Random();
             int nextCard;
             string card;
             Image cardImage;
@@ -136,7 +136,6 @@ namespace Bytejam_Project
 
         public void DealerDraw()
         {
-            Random random = new Random();
             int nextCard;
             string card;
             Image cardImage;
@@ -205,18 +204,20 @@ namespace Bytejam_Project
 
         public void CheckHand()
         {
-            // Royal flush logic.
             //CheckRoyalFlush();
             //CheckStraightFlush();
-            //CheckFourOfAKind();
+            if ( running )
+                CheckFourOfAKind();
             //CheckFullHouse();
             if ( running )
                 CheckFlush();
             if ( running )
                 CheckStraight();
-            //CheckThreeOfAKind();
+            if ( running )
+                CheckThreeOfAKind();
             //CheckTwoPair();
-            //CheckOnePair();
+            if ( running )
+                CheckOnePair();
             if ( running )
                 HighestCard();
 
@@ -225,9 +226,160 @@ namespace Bytejam_Project
                 Lose();
         }
 
+        public void CheckFourOfAKind()
+        {
+            // See if four of the same card value exist in game.
+            foreach ( string card in PlayerCards )
+            {
+                char valueToMatch = card[0];
+                List<string> matchedCards = new List<string>();
+                matchedCards.Add( card );
+                foreach ( string otherCard in PlayerCards )
+                {
+                    if ( !matchedCards.Contains( otherCard ) && otherCard[0] == valueToMatch )
+                        matchedCards.Add( card );
+                }
+                foreach ( string otherCard in DealerCards )
+                {
+                    if ( !matchedCards.Contains( otherCard ) && otherCard[0] == valueToMatch )
+                        matchedCards.Add( card );
+                }
+                if ( matchedCards.Count == 4 )
+                {
+                    string valueLiteral = "";
+
+                    switch ( valueToMatch )
+                    {
+                        case 'A':
+                            valueLiteral += "Ace";
+                            break;
+                        case '1':
+                            valueLiteral += "One";
+                            break;
+                        case '2':
+                            valueLiteral += "Two";
+                            break;
+                        case '3':
+                            valueLiteral += "Three";
+                            break;
+                        case '4':
+                            valueLiteral += "Four";
+                            break;
+                        case '5':
+                            valueLiteral += "Five";
+                            break;
+                        case '6':
+                            valueLiteral += "Six";
+                            break;
+                        case '7':
+                            valueLiteral += "Seven";
+                            break;
+                        case '8':
+                            valueLiteral += "Eight";
+                            break;
+                        case '9':
+                            valueLiteral += "Nine";
+                            break;
+                        case '0':
+                            valueLiteral += "Ten";
+                            break;
+                        case 'J':
+                            valueLiteral += "Jack";
+                            break;
+                        case 'Q':
+                            valueLiteral += "Queen";
+                            break;
+                        case 'K':
+                            valueLiteral += "King";
+                            break;
+                        default:
+                            valueLiteral += "Unknown";
+                            break;
+                    }
+                    MessageBox.Show( "You got four " + valueLiteral + "s, earning yourself $800!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
+                    MainMenu.UpdateScore( lblPlayerScore, 800 );
+                    running = false;
+                    break;
+                }
+            }
+            foreach ( string card in DealerCards )
+            {
+                char valueToMatch = card[0];
+                List<string> matchedCards = new List<string>();
+                matchedCards.Add( card );
+                foreach ( string otherCard in PlayerCards )
+                {
+                    if ( !matchedCards.Contains( otherCard ) && otherCard[0] == valueToMatch )
+                        matchedCards.Add( card );
+                }
+                foreach ( string otherCard in DealerCards )
+                {
+                    if ( !matchedCards.Contains( otherCard ) && otherCard[0] == valueToMatch )
+                        matchedCards.Add( card );
+                }
+                if ( matchedCards.Count == 4 )
+                {
+                    string valueLiteral = "";
+
+                    switch ( valueToMatch )
+                    {
+                        case 'A':
+                            valueLiteral += "Ace";
+                            break;
+                        case '1':
+                            valueLiteral += "One";
+                            break;
+                        case '2':
+                            valueLiteral += "Two";
+                            break;
+                        case '3':
+                            valueLiteral += "Three";
+                            break;
+                        case '4':
+                            valueLiteral += "Four";
+                            break;
+                        case '5':
+                            valueLiteral += "Five";
+                            break;
+                        case '6':
+                            valueLiteral += "Six";
+                            break;
+                        case '7':
+                            valueLiteral += "Seven";
+                            break;
+                        case '8':
+                            valueLiteral += "Eight";
+                            break;
+                        case '9':
+                            valueLiteral += "Nine";
+                            break;
+                        case '0':
+                            valueLiteral += "Ten";
+                            break;
+                        case 'J':
+                            valueLiteral += "Jack";
+                            break;
+                        case 'Q':
+                            valueLiteral += "Queen";
+                            break;
+                        case 'K':
+                            valueLiteral += "King";
+                            break;
+                        default:
+                            valueLiteral += "Unknown";
+                            break;
+                    }
+                    MessageBox.Show( "You got four " + valueLiteral + "s, earning yourself $800!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
+                    MainMenu.UpdateScore( lblPlayerScore, 800 );
+                    running = false;
+                    break;
+                }
+            }
+        }
+
         public void CheckFlush()
         {
-            // See if there are at least 5 cards of the same suit, and one of those cards is part of the player's hand.
+            // See if there are at least 5 cards of the same suit.
             foreach ( string card in PlayerCards )
             {
                 string suit = card.Substring( 1 );
@@ -273,7 +425,58 @@ namespace Bytejam_Project
                 }
                 if ( suitedCards.Count >= 5 )
                 {
-                    MessageBox.Show( "You got a flush!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
+                    MessageBox.Show( "You got a flush, earning yourself $600!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
+                    MainMenu.UpdateScore( lblPlayerScore, 600 );
+                    running = false;
+                    break;
+                }
+            }
+            foreach ( string card in DealerCards )
+            {
+                string suit = card.Substring( 1 );
+                List<string> suitedCards = new List<string>();
+                suitedCards.Add( card );
+                int attempts = 10;
+                while ( attempts > 0 )
+                {
+                    // Process other player card.
+                    foreach ( string otherCard in PlayerCards )
+                    {
+                        if ( suitedCards.Contains( otherCard ) )
+                            continue;
+
+                        string otherSuit = otherCard.Substring( 1 );
+
+                        if ( suit == otherSuit )
+                            suitedCards.Add( otherCard );
+                    }
+
+                    if ( suitedCards.Count == 5 )
+                        break;
+
+                    // Process dealer cards.
+                    foreach ( string otherCard in DealerCards )
+                    {
+                        if ( suitedCards.Contains( otherCard ) )
+                            continue;
+
+                        string otherSuit = otherCard.Substring( 1 );
+
+                        if ( suit == otherSuit )
+                        {
+                            suitedCards.Add( otherCard );
+                            break;
+                        }
+                    }
+
+                    if ( suitedCards.Count == 5 )
+                        break;
+
+                    attempts--;
+                }
+                if ( suitedCards.Count >= 5 )
+                {
+                    MessageBox.Show( "You got a flush, earning yourself $600!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
                     MainMenu.UpdateScore( lblPlayerScore, 600 );
                     running = false;
                     break;
@@ -283,7 +486,7 @@ namespace Bytejam_Project
 
         public void CheckStraight()
         {
-            // See if there are 5 cards in numeric alignment, and one of those cards is part of the player's hand.
+            // See if there are 5 cards in numeric alignment.
             foreach ( string card in PlayerCards )
             {
                 int value = -2;
@@ -400,11 +603,318 @@ namespace Bytejam_Project
 
                 if ( straightValues.Count >= 5 )
                 {
-                    MessageBox.Show( "You got a straight!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
+                    MessageBox.Show( "You got a straight, earning yourself $500!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
                     MainMenu.UpdateScore( lblPlayerScore, 500 );
                     running = false;
                     break;
                 }
+            }
+            foreach ( string card in DealerCards )
+            {
+                int value = -2;
+                char numericChar = card[0];
+                if ( char.IsNumber( numericChar ) && numericChar != '0' )
+                    value = (int)char.GetNumericValue( numericChar );
+                else
+                    switch ( card[0] )
+                    {
+                        case 'A':
+                            value = 1;
+                            break;
+                        case 'J':
+                            value = 11;
+                            break;
+                        case 'Q':
+                            value = 12;
+                            break;
+                        case 'K':
+                            value = 13;
+                            break;
+                        default:
+                            break;
+                    }
+                // Keep attempting to build a straight until we're done.
+                List<string> straightCards = new List<string>();
+                List<int> straightValues = new List<int>();
+                straightCards.Add( card );
+                straightValues.Add( value );
+                int attempts = 10;
+                while ( attempts > 0 )
+                {
+                    // Process other player card.
+                    foreach ( string otherCard in PlayerCards )
+                    {
+                        if ( straightCards.Contains( otherCard ) )
+                            continue;
+
+                        int otherValue = -2;
+                        numericChar = otherCard[0];
+                        if ( char.IsNumber( numericChar ) && numericChar != '0' )
+                            otherValue = (int)char.GetNumericValue( numericChar );
+                        else
+                            switch ( otherCard[0] )
+                            {
+                                case 'A':
+                                    otherValue = 1;
+                                    break;
+                                case 'J':
+                                    otherValue = 11;
+                                    break;
+                                case 'Q':
+                                    otherValue = 12;
+                                    break;
+                                case 'K':
+                                    otherValue = 13;
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                        if ( otherValue - straightValues.Min() == -1 || otherValue - straightValues.Max() == 1 )
+                        {
+                            straightCards.Add( otherCard );
+                            straightValues.Add( otherValue );
+                        }
+                    }
+
+                    if ( straightValues.Count == 5 )
+                        break;
+
+                    // Process dealer cards.
+                    foreach ( string otherCard in DealerCards )
+                    {
+                        if ( straightCards.Contains( otherCard ) )
+                            continue;
+
+                        int otherValue = -2;
+                        numericChar = otherCard[0];
+                        if ( char.IsNumber( numericChar ) && numericChar != '0' )
+                            otherValue = (int)char.GetNumericValue( numericChar );
+                        else
+                            switch ( otherCard[0] )
+                            {
+                                case 'A':
+                                    otherValue = 1;
+                                    break;
+                                case 'J':
+                                    otherValue = 11;
+                                    break;
+                                case 'Q':
+                                    otherValue = 12;
+                                    break;
+                                case 'K':
+                                    otherValue = 13;
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                        if ( otherValue - straightValues.Min() == -1 || otherValue - straightValues.Max() == 1 )
+                        {
+                            straightCards.Add( otherCard );
+                            straightValues.Add( otherValue );
+                            break;
+                        }
+                    }
+
+                    if ( straightValues.Count == 5 )
+                        break;
+
+                    attempts--;
+                }
+
+                if ( straightValues.Count >= 5 )
+                {
+                    MessageBox.Show( "You got a straight, earning yourself $500!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
+                    MainMenu.UpdateScore( lblPlayerScore, 500 );
+                    running = false;
+                    break;
+                }
+            }
+        }
+
+        public void CheckThreeOfAKind()
+        {
+
+        }
+
+        public void CheckOnePair()
+        {
+            // Check for two cards with a matching value.
+            int foundPairValue = 0;
+            foreach ( string card in PlayerCards )
+            {
+                foreach ( string otherCard in PlayerCards )
+                    if ( otherCard != card && otherCard[0] == card[0] )
+                    {
+                        int value = -2;
+                        char numericChar = otherCard[0];
+                        if ( char.IsNumber( numericChar ) && numericChar != '0' )
+                            value = (int)char.GetNumericValue( numericChar );
+                        else
+                            switch ( otherCard[0] )
+                            {
+                                case 'A':
+                                    value = 1;
+                                    break;
+                                case 'J':
+                                    value = 11;
+                                    break;
+                                case 'Q':
+                                    value = 12;
+                                    break;
+                                case 'K':
+                                    value = 13;
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                        foundPairValue = Math.Max( foundPairValue, value );
+                    }
+                foreach ( string otherCard in DealerCards )
+                    if ( otherCard != card && otherCard[0] == card[0] )
+                    {
+                        int value = -2;
+                        char numericChar = otherCard[0];
+                        if ( char.IsNumber( numericChar ) && numericChar != '0' )
+                            value = (int)char.GetNumericValue( numericChar );
+                        else
+                            switch ( otherCard[0] )
+                            {
+                                case 'A':
+                                    value = 1;
+                                    break;
+                                case 'J':
+                                    value = 11;
+                                    break;
+                                case 'Q':
+                                    value = 12;
+                                    break;
+                                case 'K':
+                                    value = 13;
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                        foundPairValue = Math.Max( foundPairValue, value );
+                    }
+
+            }
+            foreach ( string card in DealerCards )
+            {
+                foreach ( string otherCard in PlayerCards )
+                    if ( otherCard != card && otherCard[0] == card[0] )
+                    {
+                        int value = -2;
+                        char numericChar = otherCard[0];
+                        if ( char.IsNumber( numericChar ) && numericChar != '0' )
+                            value = (int)char.GetNumericValue( numericChar );
+                        else
+                            switch ( otherCard[0] )
+                            {
+                                case 'A':
+                                    value = 1;
+                                    break;
+                                case 'J':
+                                    value = 11;
+                                    break;
+                                case 'Q':
+                                    value = 12;
+                                    break;
+                                case 'K':
+                                    value = 13;
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                        foundPairValue = Math.Max( foundPairValue, value );
+                    }
+                foreach ( string otherCard in DealerCards )
+                    if ( otherCard != card && otherCard[0] == card[0] )
+                    {
+                        int value = -2;
+                        char numericChar = otherCard[0];
+                        if ( char.IsNumber( numericChar ) && numericChar != '0' )
+                            value = (int)char.GetNumericValue( numericChar );
+                        else
+                            switch ( otherCard[0] )
+                            {
+                                case 'A':
+                                    value = 1;
+                                    break;
+                                case 'J':
+                                    value = 11;
+                                    break;
+                                case 'Q':
+                                    value = 12;
+                                    break;
+                                case 'K':
+                                    value = 13;
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                        foundPairValue = Math.Max( foundPairValue, value );
+                    }
+
+            }
+            if ( foundPairValue > 0 )
+            {
+                string cardLiteral = "";
+
+                switch ( foundPairValue )
+                {
+                    case 1:
+                        cardLiteral += "Ace";
+                        break;
+                    case 2:
+                        cardLiteral += "Two";
+                        break;
+                    case 3:
+                        cardLiteral += "Three";
+                        break;
+                    case 4:
+                        cardLiteral += "Four";
+                        break;
+                    case 5:
+                        cardLiteral += "Five";
+                        break;
+                    case 6:
+                        cardLiteral += "Six";
+                        break;
+                    case 7:
+                        cardLiteral += "Seven";
+                        break;
+                    case 8:
+                        cardLiteral += "Eight";
+                        break;
+                    case 9:
+                        cardLiteral += "Nine";
+                        break;
+                    case 10:
+                        cardLiteral += "Ten";
+                        break;
+                    case 11:
+                        cardLiteral += "Jack";
+                        break;
+                    case 12:
+                        cardLiteral += "Queen";
+                        break;
+                    case 13:
+                        cardLiteral += "King";
+                        break;
+                    default:
+                        cardLiteral += "Unknown";
+                        break;
+                }
+
+                MessageBox.Show( "You have a pair of " + cardLiteral + "s, earning yourself $200!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
+                MainMenu.UpdateScore( lblPlayerScore, 200 );
+                running = false;
             }
         }
 

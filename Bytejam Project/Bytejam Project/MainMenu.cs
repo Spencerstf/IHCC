@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,18 +25,15 @@ namespace Bytejam_Project
 
         public static void UpdateScore(Label scoreDisplay)
         {
-            scoreDisplay.Text = string.Format( "{0:C}",
-                MainMenu.Players[MainMenu.ActivePlayer] );
+            CultureInfo culture = CultureInfo.CreateSpecificCulture( "en-US" );
+            culture.NumberFormat.CurrencyNegativePattern = 1;
+            String str = String.Format( culture, "{0:C}", MainMenu.Players[MainMenu.ActivePlayer] );
+            scoreDisplay.Text = str;
         }
 
         public MainMenu()
         {
             InitializeComponent();
-        }
-
-        private void MainMenu_Load( object sender, EventArgs e )
-        {
-            
         }
 
         private void btnBlackJack_Click( object sender, EventArgs e )

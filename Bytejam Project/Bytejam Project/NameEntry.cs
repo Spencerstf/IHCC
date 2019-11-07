@@ -31,7 +31,7 @@ namespace Bytejam_Project
         {
             if ( !MainMenu.Players.Keys.Contains( txtName.Text ) )
             {
-                MainMenu.Players.Add( txtName.Text, 1000 );
+                MainMenu.Players.Add( txtName.Text, 2500 );
                 MainMenu.ActivePlayer = txtName.Text;
             }
             else
