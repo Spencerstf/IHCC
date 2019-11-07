@@ -92,7 +92,11 @@
             this.btnExit.BackColor = System.Drawing.Color.Red;
             this.btnExit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.btnExit.Location = new System.Drawing.Point(890, 599);
+=======
+            this.btnExit.Location = new System.Drawing.Point(871, 599);
+>>>>>>> Stashed changes
 =======
             this.btnExit.Location = new System.Drawing.Point(871, 599);
 >>>>>>> Stashed changes
@@ -120,7 +124,11 @@
             this.btnCall.BackColor = System.Drawing.Color.Red;
             this.btnCall.ForeColor = System.Drawing.SystemColors.ControlLightLight;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.btnCall.Location = new System.Drawing.Point(320, 599);
+=======
+            this.btnCall.Location = new System.Drawing.Point(315, 600);
+>>>>>>> Stashed changes
 =======
             this.btnCall.Location = new System.Drawing.Point(315, 600);
 >>>>>>> Stashed changes
@@ -136,7 +144,11 @@
             this.btnFold.BackColor = System.Drawing.Color.Red;
             this.btnFold.ForeColor = System.Drawing.SystemColors.ControlLightLight;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.btnFold.Location = new System.Drawing.Point(606, 599);
+=======
+            this.btnFold.Location = new System.Drawing.Point(593, 599);
+>>>>>>> Stashed changes
 =======
             this.btnFold.Location = new System.Drawing.Point(593, 599);
 >>>>>>> Stashed changes
