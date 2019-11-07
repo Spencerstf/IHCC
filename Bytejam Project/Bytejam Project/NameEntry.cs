@@ -19,6 +19,16 @@ namespace Bytejam_Project
 
         private void btnSubmit_Click( object sender, EventArgs e )
         {
+            Close();
+        }
+
+        private void NameEntry_FormClosing( object sender, FormClosingEventArgs e )
+        {
+            AddPlayer();
+        }
+
+        private void AddPlayer()
+        {
             if ( !MainMenu.Players.Keys.Contains( txtName.Text ) )
             {
                 MainMenu.Players.Add( txtName.Text, 1000 );
@@ -26,7 +36,6 @@ namespace Bytejam_Project
             }
             else
                 MainMenu.ActivePlayer = txtName.Text;
-            Close();
         }
     }
 }

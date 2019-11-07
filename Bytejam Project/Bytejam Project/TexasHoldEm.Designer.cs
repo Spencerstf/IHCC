@@ -70,7 +70,7 @@
             // playerCard2
             // 
             this.playerCard2.Image = global::Bytejam_Project.Properties.Resources.Back;
-            this.playerCard2.Location = new System.Drawing.Point(807, 311);
+            this.playerCard2.Location = new System.Drawing.Point(872, 416);
             this.playerCard2.Name = "playerCard2";
             this.playerCard2.Size = new System.Drawing.Size(74, 99);
             this.playerCard2.TabIndex = 12;
@@ -91,7 +91,11 @@
             // 
             this.btnExit.BackColor = System.Drawing.Color.Red;
             this.btnExit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+<<<<<<< Updated upstream
             this.btnExit.Location = new System.Drawing.Point(890, 599);
+=======
+            this.btnExit.Location = new System.Drawing.Point(871, 599);
+>>>>>>> Stashed changes
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(203, 73);
             this.btnExit.TabIndex = 1;
@@ -115,7 +119,11 @@
             // 
             this.btnCall.BackColor = System.Drawing.Color.Red;
             this.btnCall.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+<<<<<<< Updated upstream
             this.btnCall.Location = new System.Drawing.Point(320, 599);
+=======
+            this.btnCall.Location = new System.Drawing.Point(315, 600);
+>>>>>>> Stashed changes
             this.btnCall.Name = "btnCall";
             this.btnCall.Size = new System.Drawing.Size(203, 73);
             this.btnCall.TabIndex = 3;
@@ -127,7 +135,11 @@
             // 
             this.btnFold.BackColor = System.Drawing.Color.Red;
             this.btnFold.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+<<<<<<< Updated upstream
             this.btnFold.Location = new System.Drawing.Point(606, 599);
+=======
+            this.btnFold.Location = new System.Drawing.Point(593, 599);
+>>>>>>> Stashed changes
             this.btnFold.Name = "btnFold";
             this.btnFold.Size = new System.Drawing.Size(203, 73);
             this.btnFold.TabIndex = 5;
@@ -149,7 +161,7 @@
             // dealerCard1
             // 
             this.dealerCard1.Image = global::Bytejam_Project.Properties.Resources.Back;
-            this.dealerCard1.Location = new System.Drawing.Point(70, 311);
+            this.dealerCard1.Location = new System.Drawing.Point(135, 416);
             this.dealerCard1.Name = "dealerCard1";
             this.dealerCard1.Size = new System.Drawing.Size(74, 99);
             this.dealerCard1.TabIndex = 7;
@@ -158,7 +170,7 @@
             // dealerCard4
             // 
             this.dealerCard4.Image = global::Bytejam_Project.Properties.Resources.Back;
-            this.dealerCard4.Location = new System.Drawing.Point(310, 311);
+            this.dealerCard4.Location = new System.Drawing.Point(375, 416);
             this.dealerCard4.Name = "dealerCard4";
             this.dealerCard4.Size = new System.Drawing.Size(74, 99);
             this.dealerCard4.TabIndex = 8;
@@ -167,7 +179,7 @@
             // dealerCard3
             // 
             this.dealerCard3.Image = global::Bytejam_Project.Properties.Resources.Back;
-            this.dealerCard3.Location = new System.Drawing.Point(230, 311);
+            this.dealerCard3.Location = new System.Drawing.Point(295, 416);
             this.dealerCard3.Name = "dealerCard3";
             this.dealerCard3.Size = new System.Drawing.Size(74, 99);
             this.dealerCard3.TabIndex = 9;
@@ -176,7 +188,7 @@
             // dealerCard2
             // 
             this.dealerCard2.Image = global::Bytejam_Project.Properties.Resources.Back;
-            this.dealerCard2.Location = new System.Drawing.Point(150, 311);
+            this.dealerCard2.Location = new System.Drawing.Point(215, 416);
             this.dealerCard2.Name = "dealerCard2";
             this.dealerCard2.Size = new System.Drawing.Size(74, 99);
             this.dealerCard2.TabIndex = 10;
@@ -185,7 +197,7 @@
             // dealerCard5
             // 
             this.dealerCard5.Image = global::Bytejam_Project.Properties.Resources.Back;
-            this.dealerCard5.Location = new System.Drawing.Point(390, 311);
+            this.dealerCard5.Location = new System.Drawing.Point(455, 416);
             this.dealerCard5.Name = "dealerCard5";
             this.dealerCard5.Size = new System.Drawing.Size(74, 99);
             this.dealerCard5.TabIndex = 11;
@@ -194,7 +206,7 @@
             // playerCard1
             // 
             this.playerCard1.Image = global::Bytejam_Project.Properties.Resources.Back;
-            this.playerCard1.Location = new System.Drawing.Point(704, 311);
+            this.playerCard1.Location = new System.Drawing.Point(769, 416);
             this.playerCard1.Name = "playerCard1";
             this.playerCard1.Size = new System.Drawing.Size(74, 99);
             this.playerCard1.TabIndex = 13;
@@ -205,7 +217,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(178, 280);
+            this.label1.Location = new System.Drawing.Point(243, 385);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(186, 25);
             this.label1.TabIndex = 14;
@@ -216,7 +228,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(717, 280);
+            this.label2.Location = new System.Drawing.Point(782, 385);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 32);
             this.label2.TabIndex = 15;
