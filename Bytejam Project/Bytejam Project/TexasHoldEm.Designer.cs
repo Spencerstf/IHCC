@@ -55,7 +55,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.labelPlayerName = new System.Windows.Forms.Label();
+            this.lblPlayerName = new System.Windows.Forms.Label();
             this.lblPlayerScore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.playerCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -105,7 +105,7 @@
             // 
             this.btnDeal.BackColor = System.Drawing.Color.Red;
             this.btnDeal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDeal.Location = new System.Drawing.Point(38, 578);
+            this.btnDeal.Location = new System.Drawing.Point(37, 599);
             this.btnDeal.Name = "btnDeal";
             this.btnDeal.Size = new System.Drawing.Size(203, 73);
             this.btnDeal.TabIndex = 2;
@@ -123,6 +123,7 @@
             this.btnCall.TabIndex = 3;
             this.btnCall.Text = "Call ($100)";
             this.btnCall.UseVisualStyleBackColor = false;
+            this.btnCall.Click += new System.EventHandler(this.BtnCall_Click);
             // 
             // btnFold
             // 
@@ -138,6 +139,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(807, 2);
             this.pictureBox2.Name = "pictureBox2";
@@ -227,7 +229,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(681, 257);
+            this.label3.Location = new System.Drawing.Point(677, 256);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 20);
             this.label3.TabIndex = 17;
@@ -235,79 +237,87 @@
             // 
             // label4
             // 
+            this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(764, 227);
+            this.label4.Location = new System.Drawing.Point(760, 230);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 20);
             this.label4.TabIndex = 18;
-            this.label4.Text = "$200 ";
+            this.label4.Text = "$200";
             // 
             // label5
             // 
+            this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(760, 177);
+            this.label5.Location = new System.Drawing.Point(760, 178);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
+            this.label5.Size = new System.Drawing.Size(45, 20);
             this.label5.TabIndex = 19;
             this.label5.Text = "$400";
             // 
             // label6
             // 
+            this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(760, 207);
+            this.label6.Location = new System.Drawing.Point(760, 204);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 20);
+            this.label6.Size = new System.Drawing.Size(45, 20);
             this.label6.TabIndex = 20;
             this.label6.Text = "$300";
             // 
             // label7
             // 
+            this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(760, 157);
+            this.label7.Location = new System.Drawing.Point(760, 152);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 20);
+            this.label7.Size = new System.Drawing.Size(45, 20);
             this.label7.TabIndex = 21;
-            this.label7.Text = "$500 ";
+            this.label7.Text = "$500";
             // 
             // label8
             // 
+            this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(760, 107);
+            this.label8.Location = new System.Drawing.Point(760, 100);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 20);
+            this.label8.Size = new System.Drawing.Size(45, 20);
             this.label8.TabIndex = 22;
-            this.label8.Text = "$700 ";
+            this.label8.Text = "$700";
             // 
             // label9
             // 
+            this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(756, 127);
+            this.label9.Location = new System.Drawing.Point(760, 126);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 20);
+            this.label9.Size = new System.Drawing.Size(45, 20);
             this.label9.TabIndex = 23;
             this.label9.Text = "$600";
             // 
             // label10
             // 
+            this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label10.Location = new System.Drawing.Point(753, 22);
+            this.label10.Location = new System.Drawing.Point(751, 22);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 20);
+            this.label10.Size = new System.Drawing.Size(54, 20);
             this.label10.TabIndex = 24;
             this.label10.Text = "$1000";
             // 
             // label11
             // 
+            this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label11.Location = new System.Drawing.Point(764, 55);
+            this.label11.Location = new System.Drawing.Point(760, 48);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 20);
             this.label11.TabIndex = 25;
@@ -315,9 +325,10 @@
             // 
             // label12
             // 
+            this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label12.Location = new System.Drawing.Point(764, 75);
+            this.label12.Location = new System.Drawing.Point(760, 74);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(45, 20);
             this.label12.TabIndex = 26;
@@ -329,22 +340,22 @@
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(10, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(294, 192);
+            this.pictureBox3.Size = new System.Drawing.Size(334, 222);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 27;
             this.pictureBox3.TabStop = false;
             // 
-            // labelPlayerName
+            // lblPlayerName
             // 
-            this.labelPlayerName.AutoSize = true;
-            this.labelPlayerName.BackColor = System.Drawing.Color.Transparent;
-            this.labelPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPlayerName.Image = ((System.Drawing.Image)(resources.GetObject("labelPlayerName.Image")));
-            this.labelPlayerName.Location = new System.Drawing.Point(63, 75);
-            this.labelPlayerName.Name = "labelPlayerName";
-            this.labelPlayerName.Size = new System.Drawing.Size(265, 32);
-            this.labelPlayerName.TabIndex = 28;
-            this.labelPlayerName.Text = "Name Placeholder";
+            this.lblPlayerName.AutoSize = true;
+            this.lblPlayerName.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayerName.Image = ((System.Drawing.Image)(resources.GetObject("lblPlayerName.Image")));
+            this.lblPlayerName.Location = new System.Drawing.Point(83, 96);
+            this.lblPlayerName.Name = "lblPlayerName";
+            this.lblPlayerName.Size = new System.Drawing.Size(183, 24);
+            this.lblPlayerName.TabIndex = 28;
+            this.lblPlayerName.Text = "Name Placeholder";
             // 
             // lblPlayerScore
             // 
@@ -352,9 +363,9 @@
             this.lblPlayerScore.BackColor = System.Drawing.Color.Transparent;
             this.lblPlayerScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerScore.Image = ((System.Drawing.Image)(resources.GetObject("lblPlayerScore.Image")));
-            this.lblPlayerScore.Location = new System.Drawing.Point(79, 115);
+            this.lblPlayerScore.Location = new System.Drawing.Point(83, 126);
             this.lblPlayerScore.Name = "lblPlayerScore";
-            this.lblPlayerScore.Size = new System.Drawing.Size(265, 32);
+            this.lblPlayerScore.Size = new System.Drawing.Size(183, 24);
             this.lblPlayerScore.TabIndex = 32;
             this.lblPlayerScore.Text = "Score Placeholder";
             // 
@@ -366,7 +377,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1114, 685);
             this.Controls.Add(this.lblPlayerScore);
-            this.Controls.Add(this.labelPlayerName);
+            this.Controls.Add(this.lblPlayerName);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -441,7 +452,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox playerCard2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label labelPlayerName;
+        private System.Windows.Forms.Label lblPlayerName;
         private System.Windows.Forms.Label lblPlayerScore;
     }
 }

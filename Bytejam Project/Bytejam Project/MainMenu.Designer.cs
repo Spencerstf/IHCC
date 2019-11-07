@@ -120,7 +120,7 @@
             this.Controls.Add(this.btnTexas);
             this.Controls.Add(this.btnBlackJack);
             this.Name = "MainMenu";
-            this.Text = "MainMenu";
+            this.Text = "Howdy Pardn\'er";
             this.Load += new System.EventHandler(this.MainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
