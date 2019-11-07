@@ -64,6 +64,9 @@ namespace Bytejam_Project
 
             DealCards();
             MainMenu.UpdateScore( lblPlayerScore, -200 );
+
+            NegativeCheck();
+
             running = true;
         }
 
@@ -73,10 +76,12 @@ namespace Bytejam_Project
                 return;
 
             DealerDraw();
-            MainMenu.UpdateScore( lblPlayerScore, -100 );
+            MainMenu.UpdateScore( lblPlayerScore, -100 );            
 
             if ( DealerCards.Count == 5 )
                 CheckHand();
+
+            NegativeCheck();
         }
 
         private void BtnFold_Click( object sender, EventArgs e )
@@ -1044,6 +1049,16 @@ namespace Bytejam_Project
             MainMenu.UpdateScore( lblPlayerScore, highCardValue * 10 );
             running = false;
         }
+
+        public void NegativeCheck()
+        {
+            if (MainMenu.Players[MainMenu.ActivePlayer] < 0)
+            {
+                MessageBox.Show("You have ran out of money! Better luck next time!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
+            }
+        }
+
     }
 
 }
