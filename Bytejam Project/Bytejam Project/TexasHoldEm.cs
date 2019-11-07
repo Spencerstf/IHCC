@@ -299,7 +299,7 @@ namespace Bytejam_Project
                     MessageBox.Show( "You got four " + valueLiteral + "s, earning yourself $800!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
                     MainMenu.UpdateScore( lblPlayerScore, 800 );
                     running = false;
-                    break;
+                    return;
                 }
             }
             foreach ( string card in DealerCards )
@@ -372,7 +372,7 @@ namespace Bytejam_Project
                     MessageBox.Show( "You got four " + valueLiteral + "s, earning yourself $800!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
                     MainMenu.UpdateScore( lblPlayerScore, 800 );
                     running = false;
-                    break;
+                    return;
                 }
             }
         }
@@ -428,7 +428,7 @@ namespace Bytejam_Project
                     MessageBox.Show( "You got a flush, earning yourself $600!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
                     MainMenu.UpdateScore( lblPlayerScore, 600 );
                     running = false;
-                    break;
+                    return;
                 }
             }
             foreach ( string card in DealerCards )
@@ -479,7 +479,7 @@ namespace Bytejam_Project
                     MessageBox.Show( "You got a flush, earning yourself $600!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
                     MainMenu.UpdateScore( lblPlayerScore, 600 );
                     running = false;
-                    break;
+                    return;
                 }
             }
         }
@@ -606,7 +606,7 @@ namespace Bytejam_Project
                     MessageBox.Show( "You got a straight, earning yourself $500!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
                     MainMenu.UpdateScore( lblPlayerScore, 500 );
                     running = false;
-                    break;
+                    return;
                 }
             }
             foreach ( string card in DealerCards )
@@ -728,7 +728,7 @@ namespace Bytejam_Project
                     MessageBox.Show( "You got a straight, earning yourself $500!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
                     MainMenu.UpdateScore( lblPlayerScore, 500 );
                     running = false;
-                    break;
+                    return;
                 }
             }
         }
@@ -915,6 +915,7 @@ namespace Bytejam_Project
                 MessageBox.Show( "You have a pair of " + cardLiteral + "s, earning yourself $200!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
                 MainMenu.UpdateScore( lblPlayerScore, 200 );
                 running = false;
+                return;
             }
         }
 
