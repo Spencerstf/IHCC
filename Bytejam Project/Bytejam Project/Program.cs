@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,8 +15,6 @@ namespace Bytejam_Project
         [STAThread]
         static void Main()
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer( "songs/main.wav" );
-            player.PlayLooping();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault( false );
             Application.Run( new MainMenu() );

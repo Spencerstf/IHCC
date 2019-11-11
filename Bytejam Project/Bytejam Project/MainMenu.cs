@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,9 @@ namespace Bytejam_Project
         //dictionary thats a string int for name and score 
         public static Dictionary<string, int> Players = new Dictionary<string, int>();
         public static string ActivePlayer = "";
+
+        public System.Media.SoundPlayer howdy = new System.Media.SoundPlayer( "songs/howdy.wav" );
+        System.Media.SoundPlayer song = new System.Media.SoundPlayer( "songs/main.wav" );
 
         public static void UpdateScore( Label scoreDisplay, int change )
         {
@@ -55,6 +59,17 @@ namespace Bytejam_Project
         private void Exit_Click( object sender, EventArgs e )
         {
             Close();
+        }
+
+        private void MainMenu_Activated( object sender, EventArgs e )
+        {
+            song.Stop();
+
+            howdy.Play();
+            Thread.Sleep( 2000 );
+            howdy.Stop();
+
+            song.PlayLooping();
         }
     }
 }
