@@ -85,6 +85,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "NameEntry";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Howdy Partner";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NameEntry_FormClosing);
             this.Load += new System.EventHandler(this.NameEntry_Load);

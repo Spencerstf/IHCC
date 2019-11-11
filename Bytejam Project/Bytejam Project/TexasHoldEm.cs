@@ -38,7 +38,6 @@ namespace Bytejam_Project
                 {
                     string[] splitDirectory = imageFiles[x].Split( '/' );
                     string actualName = splitDirectory[splitDirectory.Length - 1].Split( '.' )[0];
-                    if (actualName == "Back" || actualName.Contains("Heart") && (!char.IsNumber(actualName[0]) || char.GetNumericValue(actualName[0]) < 5))
                     CardImages.Add( actualName, Image.FromFile( imageFiles[x] ) );
                 }
 
@@ -2433,7 +2432,7 @@ namespace Bytejam_Project
 
         public void NegativeCheck()
         {
-            if ( MainMenu.Players[MainMenu.ActivePlayer] < 0 )
+            if ( MainMenu.Players[MainMenu.ActivePlayer] <= 0 )
             {
                 MessageBox.Show( "You have ran out of money! Better luck next time!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
                 Close();

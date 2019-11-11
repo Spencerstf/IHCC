@@ -323,7 +323,7 @@ namespace Bytejam_Project
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(-3, -3);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(291, 168);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -375,6 +375,7 @@ namespace Bytejam_Project
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnHit);
             this.Name = "Blackjack";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Blackjack";
             this.Load += new System.EventHandler(this.Blackjack_Load);
             ((System.ComponentModel.ISupportInitialize)(this.playerCard1)).EndInit();

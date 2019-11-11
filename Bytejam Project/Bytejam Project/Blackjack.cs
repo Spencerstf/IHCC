@@ -87,13 +87,13 @@ namespace Bytejam_Project
 
         public void PlayerLose()
         {
-            MessageBox.Show( "You lose, better luck next time.", "Loss.", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+            MessageBox.Show( "You have busted, better luck next time.", "Loss.", MessageBoxButtons.OK, MessageBoxIcon.Warning );
             EndGame();
         }
 
         public void DealerLose()
         {
-            MessageBox.Show( "You win $250!", "Win!", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+            MessageBox.Show( "Dealer has busted. You win $250!", "Win!", MessageBoxButtons.OK, MessageBoxIcon.Warning );
             MainMenu.UpdateScore( lblPlayerScore, 250 );
             EndGame();
         }
@@ -101,13 +101,16 @@ namespace Bytejam_Project
         public void EverybodyLose()
         {
             MainMenu.UpdateScore( lblPlayerScore, 50 );
-            MessageBox.Show( "You've tied, you receive $50.", "Tie?", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+            MessageBox.Show( "You've both busted, you receive $50.", "Tie?", MessageBoxButtons.OK, MessageBoxIcon.Warning );
             EndGame();
         }
 
         public void EndGame()
         {
             running = false;
+            //check to see if players $$ is negative
+            if ( MainMenu.Players.ContainsKey( MainMenu.ActivePlayer ) )
+                NegativeCheck();
         }
 
         public void PlayerDraw()
@@ -278,6 +281,10 @@ namespace Bytejam_Project
                 MainMenu.UpdateScore( lblPlayerScore );
             };
             form.Show();
+
+            //check to see if players $$ is negative
+            if ( MainMenu.Players.ContainsKey( MainMenu.ActivePlayer ) )
+                NegativeCheck();
         }
 
         private void btnExit_Click( object sender, EventArgs e )
@@ -356,6 +363,15 @@ namespace Bytejam_Project
                 else
                     EverybodyLose();
                 return;
+            }
+        }
+
+        public void NegativeCheck()
+        {
+            if ( MainMenu.Players[MainMenu.ActivePlayer] <= 0 )
+            {
+                MessageBox.Show( "You have ran out of money! Better luck next time!", "Boy howdy!", MessageBoxButtons.OK, MessageBoxIcon.Information );
+                Close();
             }
         }
     }
