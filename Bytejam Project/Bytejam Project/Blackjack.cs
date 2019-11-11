@@ -116,7 +116,7 @@ namespace Bytejam_Project
             string card;
             Image cardImage;
             int nextScore;
-            nextCard = random.Next( 0, CardDeck.Count - 1 );
+            nextCard = random.Next( 0, CardDeck.Count);
             card = CardDeck[nextCard];
             PlayerCards.Add( card );
             CardDeck.RemoveAt( nextCard );
@@ -159,7 +159,7 @@ namespace Bytejam_Project
             Image cardImage;
             int nextScore;
 
-            nextCard = random.Next( 0, CardDeck.Count - 1 );
+            nextCard = random.Next( 0, CardDeck.Count );
             card = CardDeck[nextCard];
             DealerCards.Add( card );
             CardDeck.RemoveAt( nextCard );

@@ -37,5 +37,16 @@ namespace Bytejam_Project
             else
                 MainMenu.ActivePlayer = txtName.Text;
         }
+
+        private void NameEntry_Load( object sender, EventArgs e )
+        {
+            txtName.Text = MainMenu.ActivePlayer;
+        }
+
+        private void txtName_KeyPress( object sender, KeyPressEventArgs e )
+        {
+            if ( e.KeyChar == '\r' )
+                Close();
+        }
     }
 }

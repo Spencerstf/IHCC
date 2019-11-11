@@ -44,7 +44,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(61, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(296, 29);
+            this.label1.Size = new System.Drawing.Size(203, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Please enter your name:";
             // 
@@ -52,8 +52,9 @@
             // 
             this.txtName.Location = new System.Drawing.Point(277, 38);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 35);
+            this.txtName.Size = new System.Drawing.Size(100, 26);
             this.txtName.TabIndex = 1;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // contextMenuStrip1
             // 
@@ -73,7 +74,7 @@
             // 
             // NameEntry
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -86,6 +87,7 @@
             this.Name = "NameEntry";
             this.Text = "Howdy Partner";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NameEntry_FormClosing);
+            this.Load += new System.EventHandler(this.NameEntry_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
