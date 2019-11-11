@@ -279,12 +279,12 @@ namespace Bytejam_Project
 
                 labelPlayerName.Text = MainMenu.ActivePlayer + "'s Game!";
                 MainMenu.UpdateScore( lblPlayerScore );
-            };
-            form.Show();
 
-            //check to see if players $$ is negative
-            if ( MainMenu.Players.ContainsKey( MainMenu.ActivePlayer ) )
-                NegativeCheck();
+                //check to see if players $$ is negative
+                if ( MainMenu.Players.ContainsKey( MainMenu.ActivePlayer ) )
+                    NegativeCheck();
+            };
+            form.Show();            
         }
 
         private void btnExit_Click( object sender, EventArgs e )

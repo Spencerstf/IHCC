@@ -47,12 +47,12 @@ namespace Bytejam_Project
 
                 lblPlayerName.Text = MainMenu.ActivePlayer + "'s Game!";
                 MainMenu.UpdateScore( lblPlayerScore );
+
+                //check to see if players $$ is negative
+                if ( MainMenu.Players.ContainsKey( MainMenu.ActivePlayer ) )
+                    NegativeCheck();
             };
             form.Show();
-
-            //check to see if players $$ is negative
-            if ( MainMenu.Players.ContainsKey( MainMenu.ActivePlayer ) )
-                NegativeCheck();
         }
 
         private void btnExit_Click( object sender, EventArgs e )
@@ -101,7 +101,16 @@ namespace Bytejam_Project
             CardDeck = new List<string>();
             foreach ( string key in CardImages.Keys )
             {
-                if ( key != "Back" )
+                if ( key == "Back" )
+                    continue;
+                int chance = 0;
+                if ( !char.IsNumber( key[0] ) )
+                    chance = 100;
+                else if ( key[0] == '0' )
+                    chance = 100;
+                else
+                    chance = (int)char.GetNumericValue( key[0] ) * 10;
+                if (random.Next(0, 100) <= chance)
                     CardDeck.Add( key );
             }
 
