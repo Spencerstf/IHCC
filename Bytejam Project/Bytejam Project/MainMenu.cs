@@ -39,7 +39,6 @@ namespace Bytejam_Project
         private void btnBlackJack_Click( object sender, EventArgs e )
         {
             Blackjack form = new Blackjack();
-            form.WindowState = FormWindowState.Minimized;
             form.Load += delegate { this.Hide(); };
             form.FormClosed += delegate { this.Show(); };
             form.Show();
